@@ -11,7 +11,7 @@ const Logo = () => {
 			<MotionLink
 				href='/'
 				whileHover={{
-					scale: 1.5,
+					scale: 1.3,
 				}}
 			>
 				<Image src={LogoGD} alt='Logo' width={100} height={100} />
