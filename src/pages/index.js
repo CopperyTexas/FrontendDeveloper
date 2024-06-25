@@ -1,7 +1,21 @@
+import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
+import { motion } from 'framer-motion'
 import Head from 'next/head'
 import Image from 'next/image'
 import profilePic from '../images/developer_pic.png'
+
+const imageVariant = {
+	initial: { opacity: 0, x: -100 },
+	animate: {
+		opacity: 1,
+		x: 0,
+		transition: {
+			duration: 1.5,
+			ease: 'easeInOut',
+		},
+	},
+}
 
 export default function Home() {
 	return (
@@ -14,11 +28,36 @@ export default function Home() {
 				<Layout className='pt-0'>
 					<div className='flex item-center justify-between w-full'>
 						<div className='w-1/2'>
-							<Image
-								src={profilePic}
-								alt='GlebovDenis'
-								className='w-full h-auto'
+							<motion.div
+								initial='initial'
+								animate='animate'
+								variants={imageVariant}
+							>
+								<Image
+									src={profilePic}
+									alt='GlebovDenis'
+									className='w-full h-auto'
+									priority
+									loading='eager'
+								/>
+							</motion.div>
+						</div>
+						<div className='w-1/2 flex-col items-center self-center'>
+							<h1>Добро пожаловать!</h1>
+							<AnimatedText
+								text='Воплощаю идеи в реальность с помощью кода.'
+								className='text-3xl text-left'
 							/>
+							<p>
+								Меня зовут Глебов Денис, и я - начинающий фронтенд разработчик,
+								имею опыт работы с такими современными технологиями, как React и
+								Angular. Несмотря на то, что у меня нет коммерческого опыта, я
+								уже успел создать несколько интересных проектов, которые
+								отражают мои навыки и стремление к совершенству. Пожалуйста,
+								ознакомьтесь с моими работами, чтобы увидеть, как я воплощаю
+								свои идеи в жизнь. Я открыт для новых возможностей и готов
+								принять участие в интересных проектах.
+							</p>
 						</div>
 					</div>
 				</Layout>
