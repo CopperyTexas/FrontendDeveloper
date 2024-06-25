@@ -34,10 +34,14 @@ const NavBar = () => {
 	return (
 		<header className='w-full px-32 py-8 font-medium flex items-center justify-between'>
 			<nav>
-				<CustomLink href='/' title='Home' className='mr-4' />
-				<CustomLink href='/about' title='About' className='mx-4' />
-				<CustomLink href='/projects' title='Projects' className='mx-4' />
-				<CustomLink href='/skills' title='Skills' className='ml-4' />
+				<CustomLink href='/' title='Home' className='mr-4 text-lg' />
+				<CustomLink href='/about' title='About' className='mx-4 text-lg' />
+				<CustomLink
+					href='/projects'
+					title='Projects'
+					className='mx-4 text-lg'
+				/>
+				<CustomLink href='/skills' title='Skills' className='ml-4 text-lg' />
 			</nav>
 			<nav className='flex items-center justify-center flex-wrap'>
 				<motion.a

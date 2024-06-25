@@ -1,8 +1,10 @@
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
+import { LinkArrow } from '@/components/icons'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import profilePic from '../images/developer_pic.png'
 
 const imageVariant = {
@@ -43,14 +45,13 @@ export default function Home() {
 							</motion.div>
 						</div>
 						<div className='w-1/2 flex-col items-center self-center'>
-							<h1>Добро пожаловать!</h1>
 							<AnimatedText
 								text='Воплощаю идеи в реальность с помощью кода.'
-								className='text-3xl text-left'
+								className='text-6xl text-left'
 							/>
-							<p>
-								Меня зовут Глебов Денис, и я - начинающий фронтенд разработчик,
-								имею опыт работы с такими современными технологиями, как React и
+							<p className='my-4 text-base font-medium'>
+								Меня зовут Денис, и я - начинающий фронтенд разработчик, имею
+								опыт работы с такими современными технологиями, как React и
 								Angular. Несмотря на то, что у меня нет коммерческого опыта, я
 								уже успел создать несколько интересных проектов, которые
 								отражают мои навыки и стремление к совершенству. Пожалуйста,
@@ -58,6 +59,19 @@ export default function Home() {
 								свои идеи в жизнь. Я открыт для новых возможностей и готов
 								принять участие в интересных проектах.
 							</p>
+							<div className='flex items-center self-start mt-2'>
+								<Link
+									href='/resume.pdf'
+									target={'_blank'}
+									className='flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark'
+									download={true}
+								>
+									Резюме <LinkArrow className={'w-6 ml-1'} />
+								</Link>
+								<Link href='mailto:dengleboff@yandex.ru' target={'_blank'}>
+									Contact
+								</Link>
+							</div>
 						</div>
 					</div>
 				</Layout>
