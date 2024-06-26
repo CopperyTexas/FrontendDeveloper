@@ -1,25 +1,12 @@
 import AnimatedText from '@/components/AnimatedText'
+import CodeAnimation from '@/components/CodeAnimation'
 import HireMe from '@/components/HireMe'
 import Layout from '@/components/Layout'
 import { LinkArrow } from '@/components/icons'
-import { motion } from 'framer-motion'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import profilePic from '../images/developer_pic.png'
 import lightBulb from '../images/miscellaneous_icons_1.svg'
-
-const imageVariant = {
-	initial: { opacity: 0, x: -100 },
-	animate: {
-		opacity: 1,
-		x: 0,
-		transition: {
-			duration: 1.5,
-			ease: 'easeInOut',
-		},
-	},
-}
 
 export default function Home() {
 	return (
@@ -31,22 +18,7 @@ export default function Home() {
 			<main className='flex items-center text-dark w-full min-h-screen'>
 				<Layout className='pt-0 flex-grow'>
 					<div className='flex items-center justify-between w-full h-full'>
-						<div className='w-1/2'>
-							<motion.div
-								initial='initial'
-								animate='animate'
-								variants={imageVariant}
-							>
-								<Image
-									src={profilePic}
-									alt='GlebovDenis'
-									className='w-full h-auto'
-									priority
-									loading='eager'
-								/>
-							</motion.div>
-						</div>
-						<div className='w-1/2 flex flex-col items-start justify-center pl-10'>
+						<div className='w-1/2 flex flex-col items-end justify-center pl-10'>
 							<AnimatedText
 								text='Воплощаю идеи в реальность с помощью кода'
 								className='text-8xl text-left'
@@ -64,26 +36,29 @@ export default function Home() {
 							<div className='flex items-center self-start mt-2'>
 								<Link
 									href='/resume.pdf'
-									target={'_blank'}
+									target='_blank'
 									className='flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark'
 									download={true}
 								>
-									Resume <LinkArrow className={'w-6 ml-1'} />
+									Resume <LinkArrow className='w-6 ml-1' />
 								</Link>
 								<Link
 									href='mailto:dengleboff@yandex.ru'
-									target={'_blank'}
+									target='_blank'
 									className='ml-4 text-lg font-medium capitalize text-dark underline'
 								>
 									Contact
 								</Link>
 							</div>
 						</div>
+						<div className='w-1/2 h-full flex items-center justify-center  ml-20'>
+							<CodeAnimation />
+						</div>
 					</div>
 				</Layout>
 				<HireMe />
 				<div className='absolute right-8 bottom-8 inline-block w-32'>
-					<Image src={lightBulb} alt='Glebov' className='w-full h-auto' />
+					<Image src={lightBulb} alt='Idea' className='w-full h-auto' />
 				</div>
 			</main>
 		</>
