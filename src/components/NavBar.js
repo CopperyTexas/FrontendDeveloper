@@ -35,7 +35,7 @@ const NavBar = () => {
 				/>
 				<CustomLink href='/skills' title='Skills' className='ml-4 text-lg' />
 			</nav>
-			<div>
+			<div className='absolute left-[50%] top-2 translate-x-[-50%]'>
 				<Logo />
 			</div>
 			<nav className='flex items-center justify-center flex-wrap'>

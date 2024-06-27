@@ -9,7 +9,7 @@ const CodeAnimation = () => {
 		`  < title >Портфолио< /title >`,
 		`< /head >`,
 		`< body >`,
-		`  < h1 >Hello HR< /h1 >`,
+		`  < h1 >Hello World!< /h1 >`,
 		`  < form >`,
 		`    < label >Фамилия:< /label >`,
 		`    < input type="text" value="Глебов" >< /input >`,
