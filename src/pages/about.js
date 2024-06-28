@@ -21,7 +21,6 @@ const about = () => {
 						<div className='col-span-3 flex flex-col items-start justify-start'>
 							<h2 className='mb-4 text-lg font-bold  text-dark/75'>Обо мне</h2>
 							<p className='font-medium'>
-								<span>Введение</span>
 								Привет! Меня зовут Денис, я - увлеченный и целеустремленный
 								фронтенд-разработчик. Моя специализация - создание интерактивных
 								и отзывчивых веб-приложений с использованием современных
