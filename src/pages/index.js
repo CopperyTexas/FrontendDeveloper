@@ -21,6 +21,30 @@ const imageVariant = {
 	},
 }
 
+const codeStrings = [
+	`< !DOCTYPE html >`,
+	`< html lang="ru" >`,
+	`< head >`,
+	`  < meta charset="UTF-8" >`,
+	`  < title >Портфолио< /title >`,
+	`< /head >`,
+	`< body >`,
+	`  < h1 >Hello World!< /h1 >`,
+	`  < form >`,
+	`    < label >Фамилия:< /label >`,
+	`    < input type="text" value="Глебов" >< /input >`,
+	`    < label >Имя:< /label >`,
+	`    < input type="text" value="Денис" >< /input >`,
+	`    < label >Дата рождения:< /label >`,
+	`    < input type="text" value="18.10.1993" >< /input >`,
+	`    < label >Должность:< /label >`,
+	`    < input type="text" value="Frontend Developer">< /input >`,
+	`    < button type="button">Выслать оффер!< /button >`,
+	`  < /form >`,
+	`< /body >`,
+	`< /html >`,
+]
+
 export default function Home() {
 	return (
 		<>
@@ -71,7 +95,7 @@ export default function Home() {
 								variants={imageVariant}
 								className='mt-10 w-full'
 							>
-								<CodeAnimation />
+								<CodeAnimation codeStrings={codeStrings} />
 							</motion.div>
 						</div>
 					</div>
