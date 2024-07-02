@@ -7,8 +7,8 @@ const quote = {
 	animate: {
 		opacity: 1,
 		transition: {
-			delay: 0.5, // Уменьшена задержка
-			staggerChildren: 0.1, // Уменьшен интервал между анимациями слов
+			delay: 0.5,
+			staggerChildren: 0.1,
 		},
 	},
 }
@@ -16,14 +16,14 @@ const quote = {
 const singleWord = {
 	initial: {
 		opacity: 0,
-		y: 30, // Уменьшено значение для плавности
+		y: 30,
 	},
 	animate: {
 		opacity: 1,
 		y: 0,
 		transition: {
-			duration: 1.5, // Увеличена длительность для более плавного появления
-			ease: 'easeInOut', // Добавлен тип перехода для плавности
+			duration: 1.5,
+			ease: 'easeInOut',
 		},
 	},
 }

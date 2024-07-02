@@ -1,5 +1,6 @@
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
+import { AchievementColor, AchievementMono } from '@/components/icons'
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -22,7 +23,7 @@ const AnimatedNumbers = ({ value }) => {
 	const ref = useRef(null)
 
 	const motionValue = useMotionValue(0)
-	const springValue = useSpring(motionValue, { duration: 3000 })
+	const springValue = useSpring(motionValue, { duration: 5000 })
 	const isInView = useInView(ref, { once: true })
 
 	useEffect(() => {
@@ -56,8 +57,8 @@ const about = () => {
 					/>
 					<div className='grid w-full grid-cols-8 gap-16'>
 						<div className='col-span-3 flex flex-col items-start justify-start'>
-							<p className='font-medium'>
-								<span className='p-4 font-bold text-lg text-dark/75'>
+							<p className='font-medium text-lg'>
+								<span className='p-4 font-bold text-xl text-dark/75'>
 									Привет!
 								</span>
 								Меня зовут Денис, я - увлеченный и целеустремленный
@@ -66,8 +67,8 @@ const about = () => {
 								технологий. Я постоянно стремлюсь к профессиональному росту и
 								освоению новых инструментов и методологий.
 							</p>
-							<p className='my-4 font-medium'>
-								<span className='p-4 font-bold text-lg text-dark/75'>
+							<p className='my-4 font-medium text-lg'>
+								<span className='p-4 font-bold text-xl text-dark/75'>
 									Опыт и навыки
 								</span>
 								Хотя у меня еще нет коммерческого опыта, я компенсирую это своим
@@ -78,8 +79,8 @@ const about = () => {
 								применять на практике знания, полученные из многочисленных
 								обучающих материалов, книг и курсов.
 							</p>
-							<p className='my-4 font-medium'>
-								<span className='p-4 font-bold text-lg text-dark/75'>
+							<p className='my-4 font-medium text-lg'>
+								<span className='p-4 font-bold text-xl text-dark/75'>
 									Мой подход
 								</span>
 								Я верю в важность чистого и читаемого кода, а также в постоянное
@@ -93,8 +94,8 @@ const about = () => {
 								документации и стараюсь всегда оставлять понятные комментарии и
 								писать подробные README файлы.
 							</p>
-							<p className='my-4 font-medium'>
-								<span className='p-4 font-bold text-lg text-dark/75'>Цели</span>
+							<p className='my-4 font-medium text-lg'>
+								<span className='p-4 font-bold text-xl text-dark/75'>Цели</span>
 								В ближайшем будущем я планирую углубить свои знания в области
 								разработки на TypeScript, что позволит мне писать еще более
 								надежный и масштабируемый код. Моя главная цель - создавать
@@ -104,8 +105,8 @@ const about = () => {
 								высшем уровне и приносил удовлетворение как мне, так и моим
 								клиентам и пользователям.
 							</p>
-							<p className='font-medium'>
-								<span className='p-4 font-bold text-lg text-dark/75'>
+							<p className='font-medium text-lg'>
+								<span className='p-4 font-bold text-xl text-dark/75'>
 									Немного о себе
 								</span>
 								Помимо программирования, я увлекаюсь чтением литературы и
@@ -114,7 +115,12 @@ const about = () => {
 								Я также активно занимаюсь спортом, что помогает мне поддерживать
 								физическую форму и ментальное здоровье. Я убежден, что здоровый
 								образ жизни положительно влияет на продуктивность и качество
-								работы. Буду рад новым возможностям и интересным проектам!
+								работы.Как видите, у меня еще есть цели, которых я не достиг, но
+								я уверен, что сотрудничество с вашей компанией поможет мне
+								развиваться и достигать новых высот. Буду рад, если смогу
+								достичь своих первых значительных достижений вместе с вами,
+								применяя и развивая свои навыки, а также внося вклад в создание
+								качественных и инновационных продуктов.
 							</p>
 						</div>
 
@@ -134,6 +140,7 @@ const about = () => {
 						</div>
 						<div className='col-span-2 flex flex-col items-end justify-between'>
 							<div className='flex flex-col items-end justify-center'>
+								<AchievementColor className='w-20' />
 								<span className='inlin-block text-7xl font-bold'>
 									<AnimatedNumbers value={5} />+
 								</span>
@@ -142,18 +149,20 @@ const about = () => {
 								</h2>
 							</div>
 							<div className='flex flex-col items-end justify-center'>
-								<span className='inlin-block text-7xl font-bold'>
+								<AchievementMono className='w-20' />
+								<span className='inlin-block text-7xl font-bold text-dark/40'>
 									<AnimatedNumbers value={100} />+
 								</span>
-								<h2 className='text-xl font-medium capitalize text-dark/75'>
+								<h2 className='text-xl font-medium capitalize text-dark/40'>
 									Довольных клиентов
 								</h2>
 							</div>
 							<div className='flex flex-col items-end justify-center'>
-								<span className='inlin-block text-7xl font-bold'>
+								<AchievementMono className='w-20' />
+								<span className='inlin-block text-7xl font-bold text-dark/40'>
 									<AnimatedNumbers value={3} />+
 								</span>
-								<h2 className='text-xl font-medium capitalize text-dark/75'>
+								<h2 className='text-xl font-medium capitalize text-dark/40'>
 									Опыт работы
 								</h2>
 							</div>
