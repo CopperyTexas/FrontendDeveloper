@@ -52,7 +52,7 @@ const about = () => {
 			<main className='flex w-full flex-col items-center justify-center'>
 				<Layout className='pt-16'>
 					<AnimatedText
-						text='Целеустремленность ведет к достижениям!'
+						text='Целеустремленность ведет к достижениям'
 						className='mb-16'
 					/>
 					<div className='grid w-full grid-cols-8 gap-16'>
@@ -115,8 +115,8 @@ const about = () => {
 								Я также активно занимаюсь спортом, что помогает мне поддерживать
 								физическую форму и ментальное здоровье. Я убежден, что здоровый
 								образ жизни положительно влияет на продуктивность и качество
-								работы.Как видите, у меня еще есть цели, которых я не достиг, но
-								я уверен, что сотрудничество с вашей компанией поможет мне
+								работы. Как видите, у меня еще есть цели, которых я не достиг,
+								но я уверен, что сотрудничество с вашей компанией поможет мне
 								развиваться и достигать новых высот. Буду рад, если смогу
 								достичь своих первых значительных достижений вместе с вами,
 								применяя и развивая свои навыки, а также внося вклад в создание
@@ -138,10 +138,10 @@ const about = () => {
 								/>
 							</motion.div>
 						</div>
-						<div className='col-span-2 flex flex-col items-end justify-between'>
+						<div className='col-span-2 flex flex-col justify-between'>
 							<div className='flex flex-col items-end justify-center'>
-								<AchievementColor className='w-20' />
-								<span className='inlin-block text-7xl font-bold'>
+								<AchievementColor />
+								<span className='inline-block text-7xl font-bold'>
 									<AnimatedNumbers value={5} />+
 								</span>
 								<h2 className='text-xl font-medium capitalize text-dark/75'>
@@ -149,8 +149,8 @@ const about = () => {
 								</h2>
 							</div>
 							<div className='flex flex-col items-end justify-center'>
-								<AchievementMono className='w-20' />
-								<span className='inlin-block text-7xl font-bold text-dark/40'>
+								<AchievementMono />
+								<span className='inline-block text-7xl font-bold text-dark/40'>
 									<AnimatedNumbers value={100} />+
 								</span>
 								<h2 className='text-xl font-medium capitalize text-dark/40'>
@@ -158,8 +158,8 @@ const about = () => {
 								</h2>
 							</div>
 							<div className='flex flex-col items-end justify-center'>
-								<AchievementMono className='w-20' />
-								<span className='inlin-block text-7xl font-bold text-dark/40'>
+								<AchievementMono />
+								<span className='inline-block text-7xl font-bold text-dark/40'>
 									<AnimatedNumbers value={3} />+
 								</span>
 								<h2 className='text-xl font-medium capitalize text-dark/40'>

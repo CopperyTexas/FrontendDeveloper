@@ -18,10 +18,10 @@ export const GithubIcon = ({ className, ...rest }) => (
 export const AchievementMono = ({ className, ...rest }) => (
 	<svg
 		xmlns='http://www.w3.org/2000/svg'
-		width='0.5em'
-		height='0.5em'
+		width='1em'
+		height='1em'
 		viewBox='-22 0 512 512.001'
-		className={`w-full h-auto ${className}`}
+		className={`w-1/3 h-auto ${className}`}
 		{...rest}
 	>
 		<path
@@ -56,11 +56,11 @@ export const AchievementMono = ({ className, ...rest }) => (
 
 export const AchievementColor = ({ className, ...rest }) => (
 	<svg
-		width='0.5em'
-		height='0.5em'
+		width='1em'
+		height='1em'
 		xmlns='http://www.w3.org/2000/svg'
 		viewBox='-22 0 512 512.001'
-		className={`w-full h-auto ${className}`}
+		className={`w-1/3 h-auto ${className}`}
 		{...rest}
 	>
 		<path
