@@ -9,6 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import lightBulb from '../images/miscellaneous_icons_1.svg'
 
+// Варианты анимации для изображения
 const imageVariant = {
 	initial: { opacity: 0, x: 100 },
 	animate: {
@@ -21,28 +22,29 @@ const imageVariant = {
 	},
 }
 
+// Массив строк кода для отображения в компоненте CodeAnimation
 const codeStrings = [
-	`< !DOCTYPE html >`,
-	`< html lang="ru" >`,
-	`< head >`,
-	`  < meta charset="UTF-8" >`,
-	`  < title >Портфолио< /title >`,
-	`< /head >`,
-	`< body >`,
-	`  < h1 >Hello World!< /h1 >`,
-	`  < form >`,
-	`    < label >Фамилия:< /label >`,
-	`    < input type="text" value="Глебов" >< /input >`,
-	`    < label >Имя:< /label >`,
-	`    < input type="text" value="Денис" >< /input >`,
-	`    < label >Дата рождения:< /label >`,
-	`    < input type="text" value="18.10.1993" >< /input >`,
-	`    < label >Должность:< /label >`,
-	`    < input type="text" value="Frontend Developer">< /input >`,
-	`    < button type="button">Выслать оффер!< /button >`,
-	`  < /form >`,
-	`< /body >`,
-	`< /html >`,
+	`<!DOCTYPE html>`,
+	`<html lang="ru">`,
+	`<head>`,
+	`  <meta charset="UTF-8">`,
+	`  <title>Портфолио</title>`,
+	`</head>`,
+	`<body>`,
+	`  <h1>Hello World!</h1>`,
+	`  <form>`,
+	`    <label>Фамилия:</label>`,
+	`    <input type="text" value="Глебов">`,
+	`    <label>Имя:</label>`,
+	`    <input type="text" value="Денис">`,
+	`    <label>Дата рождения:</label>`,
+	`    <input type="text" value="18.10.1993">`,
+	`    <label>Должность:</label>`,
+	`    <input type="text" value="Frontend Developer">`,
+	`    <button type="button">Выслать оффер!</button>`,
+	`  </form>`,
+	`</body>`,
+	`</html>`,
 ]
 
 export default function Home() {
@@ -55,6 +57,7 @@ export default function Home() {
 			<main className='flex items-center justify-center text-dark w-full h-screen overflow-hidden'>
 				<Layout className='pt-0 flex-grow h-full'>
 					<div className='flex items-center justify-between w-full h-full'>
+						{/* Левая часть с текстом и ссылками */}
 						<div className='w-1/2 flex flex-col items-start justify-center pl-10'>
 							<AnimatedText
 								text='Воплощаю идеи в реальность с помощью кода'
@@ -88,6 +91,7 @@ export default function Home() {
 								</Link>
 							</div>
 						</div>
+						{/* Правая часть с анимацией кода */}
 						<div className='w-1/2 h-full flex items-center justify-center ml-20'>
 							<motion.div
 								initial='initial'
@@ -101,6 +105,7 @@ export default function Home() {
 					</div>
 				</Layout>
 				<HireMe />
+				{/* Иконка лампочки в правом нижнем углу */}
 				<div className='absolute right-8 bottom-8 inline-block w-32'>
 					<Image src={lightBulb} alt='Idea' className='w-full h-auto' />
 				</div>
