@@ -1,10 +1,10 @@
-import AnimatedText from '@/components/AnimatedText'
-import Layout from '@/components/Layout'
-import { AchievementColor, AchievementMono } from '@/components/icons'
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
+import AnimatedText from '../components/AnimatedText'
+import Layout from '../components/Layout'
+import { AchievementColor, AchievementMono } from '../components/icons'
 import profilePic from '../images/photo_me.jpg'
 
 const imageVariant = {

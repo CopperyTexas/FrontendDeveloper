@@ -1,12 +1,12 @@
-import AnimatedText from '@/components/AnimatedText'
-import CodeAnimation from '@/components/CodeAnimation'
-import HireMe from '@/components/HireMe'
-import Layout from '@/components/Layout'
-import { LinkArrow } from '@/components/icons'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import AnimatedText from '../components/AnimatedText'
+import CodeAnimation from '../components/CodeAnimation'
+import HireMe from '../components/HireMe'
+import Layout from '../components/Layout'
+import { LinkArrow } from '../components/icons'
 import lightBulb from '../images/miscellaneous_icons_1.svg'
 
 // Варианты анимации для изображения
