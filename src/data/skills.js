@@ -1,21 +1,17 @@
+import angularLogo from './logos/angular.png'
 import bootstrapLogo from './logos/bootstrap.png'
 import cssLogo from './logos/css.png'
-import htmlLogo from './logos/html.png'
-import jsLogo from './logos/javascript.png'
-import sassLogo from './logos/sass.png'
-import tailwindLogo from './logos/tailwind.png'
-
-import angularLogo from './logos/angular.png'
-
 import gitLogo from './logos/git.png'
 import graphqlLogo from './logos/graphql.png'
-
+import htmlLogo from './logos/html.png'
+import jsLogo from './logos/javascript.png'
 import jestLogo from './logos/jest.png'
 import nextjsLogo from './logos/nextjs.png'
 import reactLogo from './logos/react.png'
 import reduxLogo from './logos/redux.png'
 import restapiLogo from './logos/restapi.png'
-
+import sassLogo from './logos/sass.png'
+import tailwindLogo from './logos/tailwind.png'
 import typescriptLogo from './logos/typescript.png'
 import webpackLogo from './logos/webpack.png'
 

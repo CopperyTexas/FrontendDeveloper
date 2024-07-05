@@ -13,12 +13,7 @@ const SkillModal = ({ skill, onClose }) => {
 					&times;
 				</button>
 				<div className='relative w-24 h-24 mb-4 mx-auto'>
-					<Image
-						src={skill.logo}
-						alt={skill.name}
-						layout='fill'
-						objectFit='contain'
-					/>
+					<Image src={skill.logo} alt={skill.name} objectFit='contain' />
 				</div>
 				<p className='mb-4'>{skill.description}</p>
 				<button
