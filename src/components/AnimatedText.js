@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
+import React, { useRef } from 'react'
 
 // Анимационные настройки для всего текста (цитаты)
 const quote = {
@@ -32,25 +33,36 @@ const singleWord = {
 
 // Компонент для отображения анимированного текста
 const AnimatedText = ({ text, className = '' }) => {
+	const ref = useRef(null)
+	const isInView = useInView(ref, { once: true })
+
+	// Разбиваем текст на отдельные слова и заранее создаем список слов
+	const words = text.split(' ').map((word, index) => (
+		<motion.span
+			key={word + '-' + index}
+			className='inline-block'
+			variants={singleWord} // Применяем анимационные настройки для каждого слова
+		>
+			{word}&nbsp;
+		</motion.span>
+	))
+
 	return (
-		<div className='w-full mx-auto flex items-center justify-center text-center overflow-hidden'>
-			<motion.h2
-				className={`inline-block w-full text-dark font-bold text-8xl ${className}`}
-				variants={quote} // Применяем анимационные настройки для всей цитаты
-				initial='initial'
-				animate='animate'
-			>
-				{/* Разбиваем текст на отдельные слова и анимируем каждое слово */}
-				{text.split(' ').map((word, index) => (
-					<motion.span
-						key={word + '-' + index}
-						className='inline-block'
-						variants={singleWord} // Применяем анимационные настройки для каждого слова
-					>
-						{word}&nbsp;
-					</motion.span>
-				))}
-			</motion.h2>
+		<div
+			className={`w-full mx-auto flex items-center justify-center overflow-hidden ${className}`}
+			ref={ref}
+			style={{ minHeight: '10rem' }} // Устанавливаем минимальную высоту для предотвращения дергания
+		>
+			{isInView && (
+				<motion.h2
+					className={`inline-block w-full text-dark font-bold text-8xl`}
+					variants={quote} // Применяем анимационные настройки для всей цитаты
+					initial='initial'
+					animate='animate'
+				>
+					{words}
+				</motion.h2>
+			)}
 		</div>
 	)
 }

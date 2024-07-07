@@ -1,10 +1,12 @@
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import AnimatedText from '../components/AnimatedText'
 import Layout from '../components/Layout'
+import SkillModal from '../components/SkillModal'
 import { AchievementColor, AchievementMono } from '../components/icons'
+import skills from '../data/skills'
 import profilePic from '../images/photo_me.jpg'
 
 const imageVariant = {
@@ -42,7 +44,21 @@ const AnimatedNumbers = ({ value }) => {
 	return <span ref={ref}></span>
 }
 
-const about = () => {
+const About = () => {
+	const [selectedSkill, setSelectedSkill] = useState(null)
+	const [showSkills, setShowSkills] = useState(false)
+
+	const openModal = skill => {
+		setSelectedSkill(skill)
+	}
+
+	const closeModal = () => {
+		setSelectedSkill(null)
+	}
+
+	const handleButtonClick = () => {
+		setShowSkills(!showSkills)
+	}
 	return (
 		<>
 			<Head>
@@ -53,7 +69,7 @@ const about = () => {
 				<Layout className='pt-16'>
 					<AnimatedText
 						text='Целеустремленность ведет к достижениям'
-						className='mb-16'
+						className='mb-16 text-center'
 					/>
 					<div className='grid w-full grid-cols-8 gap-16'>
 						<div className='col-span-3 flex flex-col items-start justify-start'>
@@ -168,9 +184,58 @@ const about = () => {
 							</div>
 						</div>
 					</div>
+					<AnimatedText
+						text='Каждый навык — шаг к успеху'
+						className='mb-16 mt-32 text-center'
+					/>
+					<div className='w-full h-full flex justify-center items-center'>
+						<motion.div
+							className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6'
+							initial='hidden'
+							whileInView='visible'
+							viewport={{ once: true }}
+							variants={{
+								hidden: { opacity: 0 },
+								visible: {
+									opacity: 1,
+									transition: {
+										staggerChildren: 0.3,
+									},
+								},
+							}}
+						>
+							{skills.map((skill, index) => (
+								<motion.div
+									key={skill.id}
+									className='flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-full p-6 shadow-lg transition-transform duration-150'
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.8, delay: index * 0.6 }}
+									whileHover={{
+										scale: 0.95,
+										boxShadow: '0px 5px 15px rgba(0, 0, 0, 0.2)',
+									}}
+									onClick={() => openModal(skill)}
+								>
+									<div className='relative w-16 h-16 mb-2'>
+										<Image
+											src={skill.logo}
+											alt={skill.name}
+											layout='fill'
+											objectFit='contain'
+										/>
+									</div>
+									<h2 className='text-lg font-medium'>{skill.name}</h2>
+								</motion.div>
+							))}
+						</motion.div>
+						{selectedSkill && (
+							<SkillModal skill={selectedSkill} onClose={closeModal} />
+						)}
+					</div>
 				</Layout>
 			</main>
 		</>
 	)
 }
-export default about
+export default About
