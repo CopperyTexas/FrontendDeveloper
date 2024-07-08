@@ -1,4 +1,3 @@
-// components/AnimatedSvg.js
 import React, { useEffect } from 'react'
 
 const svgContent = `

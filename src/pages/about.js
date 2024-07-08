@@ -193,61 +193,79 @@ const About = () => {
 							</div>
 						</div>
 					</div>
-					<AnimatedText
-						text='Каждый навык — шаг к успеху'
-						className='mb-16 mt-32 text-center'
-					/>
-					<div className='w-full h-full flex justify-center items-center'>
-						<motion.div
-							className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6'
-							initial='hidden'
-							whileInView='visible'
-							viewport={{ once: true }}
-							variants={{
-								hidden: { opacity: 0 },
-								visible: {
-									opacity: 1,
-									transition: {
-										staggerChildren: 0.3,
+
+					<div className='w-full full-viewport-height  border-2 border-solid border-dark grid grid-cols-2 grid-rows-[auto,1fr]'>
+						{/* Верхняя строка с компонентом AnimatedText */}
+						<div className='col-span-2'>
+							<AnimatedText
+								text='Каждый навык — шаг к успеху'
+								className='mb-16 mt-32 text-center'
+							/>
+						</div>
+						{/* Левый столбец с картинкой */}
+						<div className='col-span-1 flex justify-center items-center'>
+							<Image
+								src='/path/to/your/image.jpg'
+								alt='Картинка'
+								width={500}
+								height={500}
+								objectFit='contain'
+							/>
+						</div>
+						{/* Правый столбец со списком умений */}
+						<div className='col-span-1 flex justify-center items-center'>
+							<motion.div
+								className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6'
+								initial='hidden'
+								whileInView='visible'
+								viewport={{ once: true }}
+								onAnimationComplete={() => setAnimationComplete(true)}
+								variants={{
+									hidden: { opacity: 0 },
+									visible: {
+										opacity: 1,
+										transition: {
+											staggerChildren: 0.3,
+										},
 									},
-								},
-							}}
-						>
-							{skills.map((skill, index) => (
-								<motion.div
-									key={skill.id}
-									className={`flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-full p-6 ${
-										hoveredSkill === skill.id
-											? 'transform scale-80 shadow-lg'
-											: ''
-									}`}
-									initial={{ opacity: 0, y: 20 }}
-									animate={{ opacity: 1, y: 0 }}
-									transition={{
-										duration: 0.3,
-										delay: index * 0.3,
-									}}
-									onMouseEnter={() => {
-										if (animationComplete) setHoveredSkill(skill.id)
-									}}
-									onMouseLeave={() => setHoveredSkill(null)}
-									onClick={() => openModal(skill)}
-								>
-									<div className='relative w-16 h-16 mb-2'>
-										<Image
-											src={skill.logo}
-											alt={skill.name}
-											layout='fill'
-											objectFit='contain'
-										/>
-									</div>
-									<h2 className='text-lg font-medium'>{skill.name}</h2>
-								</motion.div>
-							))}
-						</motion.div>
-						{animationComplete && selectedSkill && (
-							<SkillModal skill={selectedSkill} onClose={closeModal} />
-						)}
+								}}
+							>
+								{skills.map((skill, index) => (
+									<motion.div
+										key={skill.id}
+										className={`flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-full p-6 ${
+											hoveredSkill === skill.id
+												? 'transform scale-80 shadow-lg'
+												: ''
+										}`}
+										initial={{ opacity: 0, y: 20 }}
+										animate={{ opacity: 1, y: 0 }}
+										transition={{
+											duration: 0.3,
+											delay: index * 0.3,
+										}}
+										onMouseEnter={() => {
+											if (animationComplete) setHoveredSkill(skill.id)
+										}}
+										onMouseLeave={() => setHoveredSkill(null)}
+										onClick={() => openModal(skill)}
+									>
+										<div className='relative w-16 h-16 mb-2'>
+											<Image
+												src={skill.logo}
+												alt={skill.name}
+												layout='fill'
+												objectFit='contain'
+											/>
+										</div>
+										<h2 className='text-lg font-medium'>{skill.name}</h2>
+									</motion.div>
+								))}
+							</motion.div>
+							{animationComplete && selectedSkill && (
+								<SkillModal skill={selectedSkill} onClose={closeModal} />
+							)}
+						</div>
 					</div>
 				</Layout>
 			</main>
