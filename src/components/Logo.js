@@ -15,9 +15,9 @@ const Logo = () => {
 		<div className='flex items-center justify-center mt-2'>
 			<MotionLink
 				href='/'
-				className='w-16 h-16 bg-dark text-light flex items-center justify-center rounded-full text-2xl font-bold'
+				className='w-16 h-16 bg-dark text-light flex items-center justify-center rounded-full text-2xl font-bold hover:bg-primaryDark hover:text-dark border-2 border-solid border-dark transition-colors duration-300 ease-in-out'
 				whileHover={{
-					scale: 1.3, // Анимация увеличения при наведении
+					scale: 1.3,
 				}}
 			>
 				GD

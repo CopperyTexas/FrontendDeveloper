@@ -46,7 +46,8 @@ const AnimatedNumbers = ({ value }) => {
 
 const About = () => {
 	const [selectedSkill, setSelectedSkill] = useState(null)
-	const [showSkills, setShowSkills] = useState(false)
+	const [animationComplete, setAnimationComplete] = useState(false)
+	const [hoveredSkill, setHoveredSkill] = useState(null)
 
 	const openModal = skill => {
 		setSelectedSkill(skill)
@@ -56,9 +57,15 @@ const About = () => {
 		setSelectedSkill(null)
 	}
 
-	const handleButtonClick = () => {
-		setShowSkills(!showSkills)
-	}
+	useEffect(() => {
+		if (skills.length > 0) {
+			const timer = setTimeout(() => {
+				setAnimationComplete(true)
+			}, skills.length * 300)
+			return () => clearTimeout(timer)
+		}
+	}, [skills])
+
 	return (
 		<>
 			<Head>
@@ -74,7 +81,7 @@ const About = () => {
 					<div className='grid w-full grid-cols-8 gap-16'>
 						<div className='col-span-3 flex flex-col items-start justify-start'>
 							<p className='font-medium text-lg'>
-								<span className='p-4 font-bold text-xl text-dark/75'>
+								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg'>
 									Привет!
 								</span>
 								Меня зовут Денис, я - увлеченный и целеустремленный
@@ -84,7 +91,7 @@ const About = () => {
 								освоению новых инструментов и методологий.
 							</p>
 							<p className='my-4 font-medium text-lg'>
-								<span className='p-4 font-bold text-xl text-dark/75'>
+								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg'>
 									Опыт и навыки
 								</span>
 								Хотя у меня еще нет коммерческого опыта, я компенсирую это своим
@@ -96,7 +103,7 @@ const About = () => {
 								обучающих материалов, книг и курсов.
 							</p>
 							<p className='my-4 font-medium text-lg'>
-								<span className='p-4 font-bold text-xl text-dark/75'>
+								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg'>
 									Мой подход
 								</span>
 								Я верю в важность чистого и читаемого кода, а также в постоянное
@@ -111,7 +118,9 @@ const About = () => {
 								писать подробные README файлы.
 							</p>
 							<p className='my-4 font-medium text-lg'>
-								<span className='p-4 font-bold text-xl text-dark/75'>Цели</span>
+								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg'>
+									Цели
+								</span>
 								В ближайшем будущем я планирую углубить свои знания в области
 								разработки на TypeScript, что позволит мне писать еще более
 								надежный и масштабируемый код. Моя главная цель - создавать
@@ -122,7 +131,7 @@ const About = () => {
 								клиентам и пользователям.
 							</p>
 							<p className='font-medium text-lg'>
-								<span className='p-4 font-bold text-xl text-dark/75'>
+								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg'>
 									Немного о себе
 								</span>
 								Помимо программирования, я увлекаюсь чтением литературы и
@@ -207,14 +216,21 @@ const About = () => {
 							{skills.map((skill, index) => (
 								<motion.div
 									key={skill.id}
-									className='flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-full p-6 shadow-lg transition-transform duration-150'
+									className={`flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-full p-6 ${
+										hoveredSkill === skill.id
+											? 'transform scale-80 shadow-lg'
+											: ''
+									}`}
 									initial={{ opacity: 0, y: 20 }}
 									animate={{ opacity: 1, y: 0 }}
-									transition={{ duration: 0.8, delay: index * 0.6 }}
-									whileHover={{
-										scale: 0.95,
-										boxShadow: '0px 5px 15px rgba(0, 0, 0, 0.2)',
+									transition={{
+										duration: 0.3,
+										delay: index * 0.3,
 									}}
+									onMouseEnter={() => {
+										if (animationComplete) setHoveredSkill(skill.id)
+									}}
+									onMouseLeave={() => setHoveredSkill(null)}
 									onClick={() => openModal(skill)}
 								>
 									<div className='relative w-16 h-16 mb-2'>
@@ -229,7 +245,7 @@ const About = () => {
 								</motion.div>
 							))}
 						</motion.div>
-						{selectedSkill && (
+						{animationComplete && selectedSkill && (
 							<SkillModal skill={selectedSkill} onClose={closeModal} />
 						)}
 					</div>
@@ -238,4 +254,5 @@ const About = () => {
 		</>
 	)
 }
+
 export default About
