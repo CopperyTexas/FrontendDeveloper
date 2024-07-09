@@ -10,7 +10,7 @@ module.exports = {
 				mont: ['var(--font-mont)', ...fontFamily.sans], // Закрыта скобка
 			},
 			colors: {
-				dark: '#1b1b1b',
+				dark: '#1f2937',
 				light: '#f5f5f5',
 				primary: '#B63E96', // 240,86,199
 				primaryDark: '#92E3A9', // 80,230,217

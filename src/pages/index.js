@@ -1,13 +1,12 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import Link from 'next/link'
-import AnimatedSvgHome from '../components/AnimatedSvg'
+import AnimatedSvg from '../components/AnimatedSvg'
 import AnimatedText from '../components/AnimatedText'
 import CodeAnimation from '../components/CodeAnimation'
 import HireMe from '../components/HireMe'
 import Layout from '../components/Layout'
 import { LinkArrow } from '../components/icons'
-
 // Варианты анимации для изображения
 const imageVariant = {
 	initial: { opacity: 0, x: 100 },
@@ -106,7 +105,12 @@ export default function Home() {
 				<HireMe />
 				{/* Иконка лампочки в правом нижнем углу */}
 				<div className='absolute right-2 -bottom-14  w-96'>
-					<AnimatedSvgHome className='w-full h-full animated' />
+					<AnimatedSvg
+						svgPath='/images/animated.svg'
+						className='w-full h-full animated'
+						delay={0}
+						initiallyVisible={true}
+					/>
 				</div>
 			</main>
 		</>

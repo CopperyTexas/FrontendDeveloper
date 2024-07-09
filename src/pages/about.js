@@ -2,6 +2,7 @@ import { motion, useInView, useMotionValue, useSpring } from 'framer-motion'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
+import AnimatedSvg from '../components/AnimatedSvg'
 import AnimatedText from '../components/AnimatedText'
 import Layout from '../components/Layout'
 import SkillModal from '../components/SkillModal'
@@ -46,8 +47,6 @@ const AnimatedNumbers = ({ value }) => {
 
 const About = () => {
 	const [selectedSkill, setSelectedSkill] = useState(null)
-	const [animationComplete, setAnimationComplete] = useState(false)
-	const [hoveredSkill, setHoveredSkill] = useState(null)
 
 	const openModal = skill => {
 		setSelectedSkill(skill)
@@ -56,15 +55,6 @@ const About = () => {
 	const closeModal = () => {
 		setSelectedSkill(null)
 	}
-
-	useEffect(() => {
-		if (skills.length > 0) {
-			const timer = setTimeout(() => {
-				setAnimationComplete(true)
-			}, skills.length * 300)
-			return () => clearTimeout(timer)
-		}
-	}, [skills])
 
 	return (
 		<>
@@ -76,10 +66,10 @@ const About = () => {
 				<Layout className='pt-16'>
 					<AnimatedText
 						text='Целеустремленность ведет к достижениям'
-						className='mb-16 text-center'
+						className=' text-center'
 					/>
-					<div className='grid w-full grid-cols-8 gap-16'>
-						<div className='col-span-3 flex flex-col items-start justify-start'>
+					<div className='grid w-full grid-cols-8 gap-16 mt-16'>
+						<div className='col-span-3 flex flex-col items-start justify-start mt-4'>
 							<p className='font-medium text-lg'>
 								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg'>
 									Привет!
@@ -149,7 +139,7 @@ const About = () => {
 							</p>
 						</div>
 
-						<div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 '>
+						<div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 mt-4'>
 							<div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark'></div>
 							<motion.div
 								initial='initial'
@@ -163,7 +153,7 @@ const About = () => {
 								/>
 							</motion.div>
 						</div>
-						<div className='col-span-2 flex flex-col justify-between'>
+						<div className='col-span-2 flex flex-col justify-between mt-4'>
 							<div className='flex flex-col items-end justify-center'>
 								<AchievementColor />
 								<span className='inline-block text-7xl font-bold'>
@@ -194,32 +184,30 @@ const About = () => {
 						</div>
 					</div>
 
-					<div className='w-full full-viewport-height  border-2 border-solid border-dark grid grid-cols-2 grid-rows-[auto,1fr]'>
+					<div className='w-full full-viewport-height   grid grid-cols-2 grid-rows-[auto,1fr]'>
 						{/* Верхняя строка с компонентом AnimatedText */}
 						<div className='col-span-2'>
 							<AnimatedText
 								text='Каждый навык — шаг к успеху'
-								className='mb-16 mt-32 text-center'
+								className='mt-32 text-center'
 							/>
 						</div>
 						{/* Левый столбец с картинкой */}
 						<div className='col-span-1 flex justify-center items-center'>
-							<Image
-								src='/path/to/your/image.jpg'
-								alt='Картинка'
-								width={500}
-								height={500}
-								objectFit='contain'
+							<AnimatedSvg
+								svgPath='/images/code-typing-animate.svg'
+								className='w-full h-full animated m-16 mt-0'
+								delay={1000}
+								initiallyVisible={false}
 							/>
 						</div>
 						{/* Правый столбец со списком умений */}
-						<div className='col-span-1 flex justify-center items-center'>
+						<div className='col-span-1 flex justify-center items-start mt-16'>
 							<motion.div
-								className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-6'
+								className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 m-4'
 								initial='hidden'
 								whileInView='visible'
 								viewport={{ once: true }}
-								onAnimationComplete={() => setAnimationComplete(true)}
 								variants={{
 									hidden: { opacity: 0 },
 									visible: {
@@ -230,24 +218,17 @@ const About = () => {
 									},
 								}}
 							>
-								{skills.map((skill, index) => (
+								{skills.map(skill => (
 									<motion.div
 										key={skill.id}
-										className={`flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-full p-6 ${
-											hoveredSkill === skill.id
-												? 'transform scale-80 shadow-lg'
-												: ''
-										}`}
+										className={`flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-md p-6`}
 										initial={{ opacity: 0, y: 20 }}
 										animate={{ opacity: 1, y: 0 }}
-										transition={{
-											duration: 0.3,
-											delay: index * 0.3,
+										whileHover={{
+											scale: 0.95,
+											boxShadow: '0px 4px 15px rgba(146, 227, 169, 1)',
 										}}
-										onMouseEnter={() => {
-											if (animationComplete) setHoveredSkill(skill.id)
-										}}
-										onMouseLeave={() => setHoveredSkill(null)}
+										whileTap={{ scale: 0.9 }}
 										onClick={() => openModal(skill)}
 									>
 										<div className='relative w-16 h-16 mb-2'>
@@ -262,7 +243,7 @@ const About = () => {
 									</motion.div>
 								))}
 							</motion.div>
-							{animationComplete && selectedSkill && (
+							{selectedSkill && (
 								<SkillModal skill={selectedSkill} onClose={closeModal} />
 							)}
 						</div>
