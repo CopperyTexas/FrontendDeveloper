@@ -34,8 +34,8 @@ const SkillModal = ({ skill, onClose }) => {
 
 	return createPortal(
 		<div className='fixed inset-0 bg-dark bg-opacity-50 flex items-center justify-center z-50'>
-			<div className='bg-light border-2 border-solid border-dark p-6 rounded-lg max-w-md w-full text-center relative'>
-				<div className='relative w-24 h-24 mb-4 mx-auto'>
+			<div className='bg-light border-2 border-solid border-dark p-2 rounded-lg w-1/3 h-1/6 text-center items-center relative grid grid-cols-2 grid-rows-3 '>
+				<div className='relative w-full h-full mx-auto col-span-1 row-span-3'>
 					<Image
 						src={skill.logo}
 						alt={skill.name}
@@ -43,9 +43,10 @@ const SkillModal = ({ skill, onClose }) => {
 						layout='fill'
 					/>
 				</div>
-				<p className='mb-4'>{skill.description}</p>
+				<p className='mb-4 font-bold col-span-1 text-3xl'>{skill.name}</p>
+				<p className='mb-4 col-span-1'>{skill.description}</p>
 				<button
-					className='border-2 border-solid border-dark text-light py-2 px-4 rounded-lg font-medium bg-dark hover:bg-primaryDark hover:text-dark'
+					className='m-auto w-1/2 border-2 border-solid border-dark text-light py-2 px-4 rounded-lg font-medium bg-dark hover:bg-primaryDark hover:text-dark transition-colors duration-300 ease-in-out'
 					onClick={onClose}
 				>
 					Закрыть
