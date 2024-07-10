@@ -8,7 +8,7 @@ const slides = [
 		name: 'Angular Project: Task Manager',
 		description:
 			'Проект Task Manager – это веб-приложение, разработанное на базе Angular, предназначенное для управления задачами и проектами. Приложение позволяет пользователям создавать, редактировать и удалять задачи, а также отслеживать их выполнение. Основная цель проекта – предоставить удобный инструмент для организации работы и повышения продуктивности.',
-		src: '/images/Angular.png',
+		src: '/images/projects/Angular.png',
 		srcGit: 'https://github.com/',
 	},
 	{
@@ -51,22 +51,27 @@ const Slider = () => {
 			style={{ backgroundImage: `url(${slides[currentSlide].src})` }}
 		>
 			<div
-				className='w-1/2 m-auto col-span-1 flex flex-col items-start
-			 justify-center  p-6 rounded-xl bg-slate-700 bg-opacity-80'
+				className='w-2/3 m-auto col-span-1 flex flex-col items-start
+			 justify-center  p-6 rounded-xl bg-dark bg-opacity-90'
 			>
 				<h3 className='font-bold text-6xl mb-6 text-light'>
 					{slides[currentSlide].name}
 				</h3>
 				<p className='text-light'>{slides[currentSlide].description}</p>
-				<motion.a
-					href='https://github.com/CopperyTexas'
-					target={'_blank'}
-					whileHover={{ y: -2 }}
-					whileTap={{ scale: 0.9 }}
-					className='w-8 mt-2'
-				>
-					<GithubIcon />
-				</motion.a>
+				<div className='mt-6 flex item-center justify-center'>
+					<motion.a
+						href='https://github.com/CopperyTexas'
+						target={'_blank'}
+						whileHover={{ y: -2 }}
+						whileTap={{ scale: 0.9 }}
+						className='w-16'
+					>
+						<GithubIcon />
+					</motion.a>
+					<button className='w-full h-full font-medium border-2 border-solid border-light m-2 rounded-2xl text-light bg-dark hover:bg-primaryDark hover:text-dark hover:scale-95 hover:border-dark'>
+						See more
+					</button>
+				</div>
 			</div>
 			<div className='col-span-1'>dfsd</div>
 			<button
