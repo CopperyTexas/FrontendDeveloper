@@ -4,15 +4,17 @@ import slides from '../data/slides'
 import { GithubIcon } from './icons'
 
 const variants = {
-	disappear: { y: '-100%', opacity: 0 },
-	moveToCenter: { x: 0, opacity: 1 },
+	disappear: { x: '-100%', opacity: 0 },
+	moveLeft: { x: '-100%', opacity: 1 },
+	center: { x: '0%', opacity: 1 },
 }
 
 const Slider = () => {
 	const [currentSlide, setCurrentSlide] = useState(0)
-	const [slideOrder, setSlideOrder] = useState([0, 1, 2])
+	const [slideOrder, setSlideOrder] = useState(slides.map((_, index) => index))
 	const [isAnimating, setIsAnimating] = useState(false)
 	const [direction, setDirection] = useState(null)
+	const [prevSlide, setPrevSlide] = useState(slides[0].src)
 
 	const handleNext = () => {
 		if (isAnimating) return
@@ -25,6 +27,8 @@ const Slider = () => {
 				newOrder.push(first)
 				return newOrder
 			})
+			setPrevSlide(slides[currentSlide].src)
+			setCurrentSlide(prev => (prev === slides.length - 1 ? 0 : prev + 1))
 			setIsAnimating(false)
 		}, 500)
 	}
@@ -40,6 +44,8 @@ const Slider = () => {
 				newOrder.unshift(last)
 				return newOrder
 			})
+			setPrevSlide(slides[currentSlide].src)
+			setCurrentSlide(prev => (prev === 0 ? slides.length - 1 : prev - 1))
 			setIsAnimating(false)
 		}, 500)
 	}
@@ -91,26 +97,36 @@ const Slider = () => {
 				</div>
 			</motion.div>
 
-			<div className='w-full h-1/2 col-span-1 flex justify-center space-x-4 pr-4 self-end'>
-				{slideOrder.map((slideIndex, index) => {
-					return (
-						<motion.div
-							key={slideIndex}
-							className='w-full h-full bg-cover bg-center rounded-lg cursor-pointer border-4 border-solid border-dark'
-							style={{ backgroundImage: `url(${slides[slideIndex].src})` }}
-							onClick={() => handleSlideClick(slideIndex)}
-							initial={{ x: '0%', opacity: 1 }}
-							animate={
-								isAnimating && direction === 'next' && index === 0
+			<div className='w-full h-1/2 col-span-1 flex gap-4 justify-start pr-4 self-end overflow-hidden p-6'>
+				{slideOrder.map((index, i) => (
+					<motion.div
+						key={slides[index].id}
+						className='w-1/3 flex-shrink-0 bg-cover bg-center rounded-lg cursor-pointer border-4 border-solid border-dark'
+						onClick={() => handleSlideClick(index)}
+						initial={{ x: '0%', opacity: 1 }}
+						animate={
+							isAnimating && direction === 'next'
+								? i === 0
 									? 'disappear'
-									: 'moveToCenter'
+									: 'moveLeft'
+								: 'center'
+						}
+						whileHover={{ scale: 1.05 }}
+						variants={variants}
+						transition={{ duration: 0.5 }}
+						style={{
+							backgroundImage: `url(${slides[index].src})`,
+							transition: 'background-image 2s ease-in-out',
+						}}
+						onAnimationComplete={() => {
+							if (isAnimating && direction === 'next') {
+								if (i === slideOrder.length - 1) {
+									setIsAnimating(false)
+								}
 							}
-							whileHover={{ scale: 1.05 }}
-							variants={variants}
-							transition={{ duration: 0.5 }}
-						/>
-					)
-				})}
+						}}
+					/>
+				))}
 			</div>
 			<div className='col-span-2 m-auto'>
 				<button
