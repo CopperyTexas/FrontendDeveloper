@@ -7,63 +7,64 @@ const variants = {
 	disappear: { x: '-100%', opacity: 0 },
 	moveLeft: { x: '-100%', opacity: 1 },
 	center: { x: '0%', opacity: 1 },
+	appear: { x: '100%', opacity: 1 },
 }
 
 const Slider = () => {
 	const [currentSlide, setCurrentSlide] = useState(0)
-	const [slideOrder, setSlideOrder] = useState(slides.map((_, index) => index))
 	const [isAnimating, setIsAnimating] = useState(false)
-	const [direction, setDirection] = useState(null)
-	const [prevSlide, setPrevSlide] = useState(slides[0].src)
+	const [direction, setDirection] = useState('')
+	const [slideOrder, setSlideOrder] = useState(slides.map((_, index) => index))
 
 	const handleNext = () => {
 		if (isAnimating) return
 		setDirection('next')
 		setIsAnimating(true)
+		setCurrentSlide(prev => (prev + 1) % slides.length)
+
 		setTimeout(() => {
-			setSlideOrder(prev => {
-				const newOrder = [...prev]
-				const first = newOrder.shift()
-				newOrder.push(first)
-				return newOrder
-			})
-			setPrevSlide(slides[currentSlide].src)
-			setCurrentSlide(prev => (prev === slides.length - 1 ? 0 : prev + 1))
+			const newOrder = [...slideOrder]
+			const first = newOrder.shift()
+			newOrder.push(first)
+			setSlideOrder(newOrder)
 			setIsAnimating(false)
-		}, 500)
+		}, 500) // duration of the animation
 	}
 
 	const handlePrev = () => {
 		if (isAnimating) return
 		setDirection('prev')
 		setIsAnimating(true)
+		setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length)
+
 		setTimeout(() => {
-			setSlideOrder(prev => {
-				const newOrder = [...prev]
-				const last = newOrder.pop()
-				newOrder.unshift(last)
-				return newOrder
-			})
-			setPrevSlide(slides[currentSlide].src)
-			setCurrentSlide(prev => (prev === 0 ? slides.length - 1 : prev - 1))
+			const newOrder = [...slideOrder]
+			const last = newOrder.pop()
+			newOrder.unshift(last)
+			setSlideOrder(newOrder)
 			setIsAnimating(false)
-		}, 500)
+		}, 500) // duration of the animation
 	}
 
 	const handleSlideClick = index => {
 		setCurrentSlide(index)
 	}
 
+	const onAnimationComplete = () => {
+		setIsAnimating(false)
+	}
+
 	return (
 		<div className='relative w-full slider-height overflow-hidden rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-[auto_100px] items-center justify-center border-2 border-solid border-dark'>
-			<AnimatePresence>
+			<AnimatePresence initial={false} custom={direction}>
 				<motion.div
 					key={currentSlide}
 					className='absolute inset-0 bg-cover bg-center filter blur-sm -z-10'
 					style={{ backgroundImage: `url(${slides[currentSlide].src})` }}
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					exit={{ opacity: 0 }}
+					initial='disappear'
+					animate='center'
+					exit='disappear'
+					variants={variants}
 					transition={{ duration: 0.5 }}
 				/>
 			</AnimatePresence>
@@ -97,36 +98,26 @@ const Slider = () => {
 				</div>
 			</motion.div>
 
-			<div className='w-full h-1/2 col-span-1 flex gap-4 justify-start pr-4 self-end overflow-hidden p-6'>
-				{slideOrder.map((index, i) => (
-					<motion.div
-						key={slides[index].id}
-						className='w-1/3 flex-shrink-0 bg-cover bg-center rounded-lg cursor-pointer border-4 border-solid border-dark'
-						onClick={() => handleSlideClick(index)}
-						initial={{ x: '0%', opacity: 1 }}
-						animate={
-							isAnimating && direction === 'next'
-								? i === 0
-									? 'disappear'
-									: 'moveLeft'
-								: 'center'
-						}
-						whileHover={{ scale: 1.05 }}
-						variants={variants}
-						transition={{ duration: 0.5 }}
-						style={{
-							backgroundImage: `url(${slides[index].src})`,
-							transition: 'background-image 2s ease-in-out',
-						}}
-						onAnimationComplete={() => {
-							if (isAnimating && direction === 'next') {
-								if (i === slideOrder.length - 1) {
-									setIsAnimating(false)
-								}
-							}
-						}}
-					/>
-				))}
+			<div className='w-full h-1/2 col-span-1 flex gap-4 justify-start pr-4 self-end overflow-hidden'>
+				{slideOrder.map((index, i) => {
+					const offset =
+						(i - currentSlide + slideOrder.length) % slideOrder.length
+					const xOffset = offset * 100 // Расстояние между слайдами
+
+					return (
+						<motion.div
+							key={slides[index].id}
+							className='w-1/3 flex-shrink-0 bg-cover bg-center rounded-lg cursor-pointer border-4 border-solid border-dark'
+							style={{
+								backgroundImage: `url(${slides[index].src})`,
+							}}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							transition={{ duration: 0.5 }}
+							onAnimationComplete={onAnimationComplete}
+						/>
+					)
+				})}
 			</div>
 			<div className='col-span-2 m-auto'>
 				<button
