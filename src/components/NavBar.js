@@ -2,7 +2,15 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Logo from './Logo'
-import { GithubIcon, LinkedInIcon, TGIcon, VkontakteIcon } from './icons'
+import useThemeSwitcher from './hooks/useThemeSwitcher'
+import {
+	GithubIcon,
+	LinkedInIcon,
+	MoonIcon,
+	SunIcon,
+	TGIcon,
+	VkontakteIcon,
+} from './icons'
 
 /**
  * Компонент CustomLink
@@ -31,8 +39,9 @@ const CustomLink = ({ href, title, className = '' }) => {
  * Отображает навигационную панель с логотипом и ссылками на социальные сети
  */
 const NavBar = () => {
+	const [mode, setMode] = useThemeSwitcher()
 	return (
-		<header className='w-full px-32 py-8 font-medium flex items-center justify-between'>
+		<header className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light'>
 			{/* Основная навигация */}
 			<nav>
 				<CustomLink href='/' title='Home' className='mr-4 text-lg' />
@@ -87,6 +96,19 @@ const NavBar = () => {
 				>
 					<TGIcon />
 				</motion.a>
+
+				<button
+					onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
+					className={`ml-3 flex items-center justify-center rounded-full p-1 ${
+						mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'
+					}`}
+				>
+					{mode === 'dark' ? (
+						<SunIcon className={'fill-dark'} />
+					) : (
+						<MoonIcon className={'fill-dark'} />
+					)}
+				</button>
 			</nav>
 		</header>
 	)

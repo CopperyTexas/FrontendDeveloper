@@ -69,7 +69,7 @@ const About = () => {
 						className=' text-center'
 					/>
 					<div className='grid w-full grid-cols-8 gap-16 mt-16'>
-						<div className='col-span-3 flex flex-col items-start justify-start mt-4'>
+						<div className='col-span-3 flex flex-col items-start justify-start mt-4 dark:text-light'>
 							<p className='font-medium text-lg'>
 								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg'>
 									Привет!
@@ -134,8 +134,8 @@ const About = () => {
 							</p>
 						</div>
 
-						<div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 mt-4'>
-							<div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark'></div>
+						<div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 mt-4 dark:bg-primaryDark dark:bg-opacity-80'>
+							<div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-primaryDark dark:bg-opacity-60'></div>
 							<motion.div
 								initial='initial'
 								animate='animate'
@@ -148,31 +148,31 @@ const About = () => {
 								/>
 							</motion.div>
 						</div>
-						<div className='col-span-2 flex flex-col justify-between mt-4'>
+						<div className='col-span-2 flex flex-col justify-between mt-4 dark:text-light'>
 							<div className='flex flex-col items-end justify-center'>
 								<AchievementColor />
 								<span className='inline-block text-7xl font-bold'>
 									<AnimatedNumbers value={5} />+
 								</span>
-								<h2 className='text-xl font-medium capitalize text-dark/75'>
+								<h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light'>
 									Выполненых проектов
 								</h2>
 							</div>
 							<div className='flex flex-col items-end justify-center'>
 								<AchievementMono />
-								<span className='inline-block text-7xl font-bold text-dark/40'>
+								<span className='inline-block text-7xl font-bold text-dark/40 dark:text-light dark:opacity-30'>
 									<AnimatedNumbers value={100} />+
 								</span>
-								<h2 className='text-xl font-medium capitalize text-dark/40'>
+								<h2 className='text-xl font-medium capitalize text-dark/40 dark:text-light dark:opacity-30'>
 									Довольных клиентов
 								</h2>
 							</div>
 							<div className='flex flex-col items-end justify-center'>
 								<AchievementMono />
-								<span className='inline-block text-7xl font-bold text-dark/40'>
+								<span className='inline-block text-7xl font-bold text-dark/40 dark:text-light dark:opacity-30'>
 									<AnimatedNumbers value={3} />+
 								</span>
-								<h2 className='text-xl font-medium capitalize text-dark/40'>
+								<h2 className='text-xl font-medium capitalize text-dark/40 dark:text-light dark:opacity-30'>
 									Опыт работы
 								</h2>
 							</div>
@@ -216,7 +216,7 @@ const About = () => {
 								{skills.map(skill => (
 									<motion.div
 										key={skill.id}
-										className={`flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-md p-6`}
+										className={`flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-md p-6 dark:border-light`}
 										initial={{ opacity: 0, y: 20 }}
 										animate={{ opacity: 1, y: 0 }}
 										whileHover={{
@@ -234,7 +234,9 @@ const About = () => {
 												objectFit='contain'
 											/>
 										</div>
-										<h2 className='text-lg font-medium'>{skill.name}</h2>
+										<h2 className='text-lg font-medium dark:text-light'>
+											{skill.name}
+										</h2>
 									</motion.div>
 								))}
 							</motion.div>

@@ -7,7 +7,7 @@ const variants = {
 	disappear: { x: '-100%', opacity: 0 },
 	moveLeft: { x: '-100%', opacity: 1 },
 	center: { x: '0%', opacity: 1 },
-	appear: { x: '100%', opacity: 1 },
+	appear: { x: '-100%', opacity: 0 },
 }
 
 const Slider = () => {
@@ -55,7 +55,7 @@ const Slider = () => {
 	}
 
 	return (
-		<div className='relative w-full slider-height overflow-hidden rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-[auto_100px] items-center justify-center border-2 border-solid border-dark'>
+		<div className='relative w-full slider-height overflow-hidden rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-[auto_100px] items-center justify-center border-2 border-solid border-dark dark:border-light'>
 			<AnimatePresence initial={false} custom={direction}>
 				<motion.div
 					key={currentSlide}
@@ -72,7 +72,7 @@ const Slider = () => {
 			<motion.div
 				className='w-2/3 m-auto col-span-1 flex flex-col items-start justify-center p-6 rounded-xl bg-dark bg-opacity-90'
 				key={currentSlide}
-				initial='enter'
+				initial='appear'
 				animate='center'
 				exit='exit'
 				variants={variants}

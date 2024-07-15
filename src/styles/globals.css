@@ -2,12 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+	transition: color 800ms ease-in-out;
+}
+
 .full-viewport-height {
 	height: 93vh;
 }
+
 .slider-height {
 	height: 80vh;
 }
+
 @layer utilities {
 	@keyframes fadeIn {
 		from {
@@ -37,6 +43,7 @@
 		animation: slideIn 0.5s ease-in-out;
 	}
 }
+
 .animate-next {
 	transition: transform 0.5s ease-in-out;
 	transform: translateX(-100%);

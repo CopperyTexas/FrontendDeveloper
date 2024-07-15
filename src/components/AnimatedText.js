@@ -49,13 +49,13 @@ const AnimatedText = ({ text, className = '' }) => {
 
 	return (
 		<div
-			className={`w-full mx-auto flex items-center justify-center overflow-hidden ${className}`}
+			className={`w-full mx-auto flex items-center justify-center overflow-hidden  ${className}`}
 			ref={ref}
 			style={{ minHeight: '10rem' }} // Устанавливаем минимальную высоту для предотвращения дергания
 		>
 			{isInView && (
 				<motion.h2
-					className={`inline-block w-full text-dark font-bold text-8xl`}
+					className={`inline-block w-full text-dark font-bold text-8xl dark:text-primaryDark`}
 					variants={quote} // Применяем анимационные настройки для всей цитаты
 					initial='initial'
 					animate='animate'
