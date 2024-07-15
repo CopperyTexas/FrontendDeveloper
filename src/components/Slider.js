@@ -59,7 +59,7 @@ const Slider = () => {
 			<AnimatePresence initial={false} custom={direction}>
 				<motion.div
 					key={currentSlide}
-					className='absolute inset-0 bg-cover bg-center filter blur-sm -z-10'
+					className='absolute inset-0 bg-cover bg-center filter blur-md -z-10'
 					style={{ backgroundImage: `url(${slides[currentSlide].src})` }}
 					initial='disappear'
 					animate='center'

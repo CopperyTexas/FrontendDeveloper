@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
 
 const useThemeSwitcher = () => {
-	const preferDarkQuery = '(prefer-color-scheme: dark)'
+	const preferDarkQuery = '(prefers-color-scheme: dark)'
 	const [mode, setMode] = useState('')
-	const updateTheme = useCallback(check => {
-		if (check === 'dark') {
+
+	const updateTheme = useCallback(theme => {
+		if (theme === 'dark') {
 			document.documentElement.classList.add('dark')
 			document.documentElement.classList.remove('light')
 		} else {
@@ -18,27 +19,25 @@ const useThemeSwitcher = () => {
 		const userPref = window.localStorage.getItem('theme')
 		const handleChange = () => {
 			if (userPref) {
-				let check = userPref === 'dark' ? 'dark' : 'light'
-				setMode(check)
-				updateTheme(check)
+				const theme = userPref === 'dark' ? 'dark' : 'light'
+				setMode(theme)
+				updateTheme(theme)
 			} else {
-				let check = mediaQuery.matches ? 'dark' : 'light'
-				setMode(check)
-				updateTheme(check)
+				const theme = mediaQuery.matches ? 'dark' : 'light'
+				setMode(theme)
+				updateTheme(theme)
 			}
 		}
+
 		mediaQuery.addEventListener('change', handleChange)
 		handleChange()
 		return () => mediaQuery.removeEventListener('change', handleChange)
 	}, [updateTheme])
 
 	useEffect(() => {
-		if (mode === 'dark') {
-			window.localStorage.setItem('theme', 'dark')
-			updateTheme('dark')
-		} else {
-			window.localStorage.setItem('theme', 'light')
-			updateTheme('light')
+		if (mode) {
+			window.localStorage.setItem('theme', mode)
+			updateTheme(mode)
 		}
 	}, [mode, updateTheme])
 
