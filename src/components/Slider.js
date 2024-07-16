@@ -55,7 +55,7 @@ const Slider = () => {
 	}
 
 	return (
-		<div className='relative w-full slider-height overflow-hidden rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-[auto_100px] items-center justify-center border-2 border-solid border-dark dark:border-light'>
+		<div className='relative w-full slider-height  rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-[auto_100px] items-center justify-center border-2 border-solid border-dark dark:border-light p-4 overflow-hidden'>
 			<AnimatePresence initial={false} custom={direction}>
 				<motion.div
 					key={currentSlide}
@@ -88,7 +88,7 @@ const Slider = () => {
 						target={'_blank'}
 						whileHover={{ y: -2 }}
 						whileTap={{ scale: 0.9 }}
-						className='w-16'
+						className='w-16  bg-light rounded-full'
 					>
 						<GithubIcon />
 					</motion.a>
@@ -98,7 +98,7 @@ const Slider = () => {
 				</div>
 			</motion.div>
 
-			<div className='w-full h-1/2 col-span-1 flex gap-4 justify-start pr-4 self-end overflow-hidden'>
+			<div className='w-full h-1/2 col-span-1 flex gap-4 justify-start self-end -ml-6'>
 				{slideOrder.map((index, i) => {
 					const offset =
 						(i - currentSlide + slideOrder.length) % slideOrder.length
