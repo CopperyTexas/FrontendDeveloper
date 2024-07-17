@@ -73,9 +73,9 @@ const NavBar = () => {
 	const handleClick = () => {
 		setIsOpen(!isOpen)
 	}
-
+	2
 	return (
-		<header className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light relative'>
+		<header className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light relative md:px-8 '>
 			<button
 				className='hidden flex-col justify-center items-center lg:flex'
 				onClick={handleClick}
@@ -194,7 +194,7 @@ const NavBar = () => {
 				<Logo />
 			</div>
 
-			<nav className='flex items-center justify-center '>
+			<nav className='flex items-center justify-center lg:hidden'>
 				<motion.a
 					href='https://github.com/CopperyTexas'
 					target={'_blank'}

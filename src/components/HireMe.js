@@ -4,7 +4,7 @@ import { CircularText } from './icons'
 // Компонент кнопки "Hire Me" с анимацией и ссылкой на контакт
 const HireMe = () => {
 	return (
-		<div className='fixed left-4 bottom-12 flex items-center justify-center overflow-hidden'>
+		<div className='fixed left-4 -bottom-4 flex items-center justify-center overflow-hidden'>
 			<div className='w-60 h-auto flex items-center justify-center relative'>
 				{/* Анимированный текст по кругу */}
 				<CircularText

@@ -16,7 +16,7 @@ const CodeAnimation = ({ codeStrings, typewriterOptions }) => {
 			{/* Основная область с анимацией кода */}
 			<div className='flex-grow overflow-y-auto p-4'>
 				<div
-					className='whitespace-pre-wrap text-lg text-primaryDark h-full'
+					className='whitespace-pre-wrap text-lg text-primaryDark h-full xl:text-sm '
 					id='typewriter'
 				>
 					<Typewriter
