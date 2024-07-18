@@ -14,7 +14,7 @@ const Projects = () => {
 				<Layout className='pt-16'>
 					<AnimatedText
 						text='Каждый проект - новая вершина'
-						className=' text-center'
+						className=' !text-7xl !text-center xl:!text-5xl lg:!text-center lg:!text-7xl md:!text-5xl sm:!text-3xl'
 					/>
 					<div className='w-full slider-height'>
 						<Slider />

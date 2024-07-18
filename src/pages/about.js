@@ -66,12 +66,12 @@ const About = () => {
 				<Layout className='pt-16'>
 					<AnimatedText
 						text='Целеустремленность ведет к достижениям'
-						className=' text-center'
+						className=' !text-7xl !text-center xl:!text-5xl lg:!text-center lg:!text-7xl md:!text-5xl sm:!text-3xl'
 					/>
-					<div className='grid w-full grid-cols-8 gap-16 mt-16'>
-						<div className='col-span-3 flex flex-col items-start justify-start mt-4 dark:text-light'>
-							<p className='font-medium text-lg'>
-								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg'>
+					<div className='grid w-full grid-cols-8 gap-16 mt-16 sm:gap-8'>
+						<div className='col-span-3 flex flex-col items-start justify-start mt-4 dark:text-light 2xl:col-span-4 '>
+							<p className='font-medium text-lg 2xl:text-sm xl:text-xs '>
+								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg 2xl:text-sm'>
 									Привет!
 								</span>
 								Меня зовут Денис, я - увлеченный и целеустремленный
@@ -80,8 +80,8 @@ const About = () => {
 								технологий. Я постоянно стремлюсь к профессиональному росту и
 								освоению новых инструментов и методологий.
 							</p>
-							<p className='mt-4 font-medium text-lg'>
-								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg'>
+							<p className='mt-4 font-medium text-lg 2xl:text-sm xl:text-xs'>
+								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg 2xl:text-sm'>
 									Опыт и навыки
 								</span>
 								Хотя у меня еще нет коммерческого опыта, я компенсирую это своим
@@ -92,8 +92,8 @@ const About = () => {
 								применять на практике знания, полученные из многочисленных
 								обучающих материалов, книг и курсов.
 							</p>
-							<p className='mt-4 font-medium text-lg'>
-								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg'>
+							<p className='mt-4 font-medium text-lg 2xl:text-sm xl:text-xs'>
+								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg 2xl:text-sm'>
 									Мой подход
 								</span>
 								Я верю в важность чистого и читаемого кода, а также в постоянное
@@ -102,8 +102,8 @@ const About = () => {
 								поставленных задач. Мои принципы включают чистый код,
 								тестирование и документацию.
 							</p>
-							<p className='mt-4 font-medium text-lg'>
-								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg'>
+							<p className='mt-4 font-medium text-lg 2xl:text-sm xl:text-xs'>
+								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg 2xl:text-sm'>
 									Цели
 								</span>
 								В ближайшем будущем я планирую углубить свои знания в области
@@ -115,8 +115,8 @@ const About = () => {
 								высшем уровне и приносил удовлетворение как мне, так и моим
 								клиентам и пользователям.
 							</p>
-							<p className='mt-4 font-medium text-lg'>
-								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg'>
+							<p className='mt-4 font-medium text-lg 2xl:text-sm xl:text-xs'>
+								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg 2xl:text-sm'>
 									Немного о себе
 								</span>
 								Помимо программирования, мои увлечения включают чтение
@@ -134,7 +134,7 @@ const About = () => {
 							</p>
 						</div>
 
-						<div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 mt-4 dark:bg-dark dark:border-primaryDark'>
+						<div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 mt-4 dark:bg-dark dark:border-primaryDark 2xl:col-span-4'>
 							<div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-primaryDark dark:bg-opacity-60'></div>
 							<motion.div
 								initial='initial'
@@ -152,7 +152,7 @@ const About = () => {
 								/>
 							</motion.div>
 						</div>
-						<div className='col-span-2 flex flex-col justify-between mt-4 dark:text-light'>
+						<div className='col-span-2 flex flex-col justify-between mt-4 dark:text-light 2xl:col-span-8 2xl:flex-row'>
 							<div className='flex flex-col items-end justify-center'>
 								<AchievementColor />
 								<span className='inline-block text-7xl font-bold'>
@@ -188,7 +188,7 @@ const About = () => {
 						<div className='col-span-2'>
 							<AnimatedText
 								text='Каждый навык — шаг к успеху'
-								className='mt-32 text-center'
+								className='mt-32 !text-7xl !text-center xl:!text-5xl lg:!text-center lg:!text-7xl md:!text-5xl sm:!text-3xl'
 							/>
 						</div>
 						{/* Левый столбец с картинкой */}
