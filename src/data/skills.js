@@ -40,7 +40,7 @@ const skills = [
 	},
 	{
 		id: 4,
-		name: 'Tailwind CSS',
+		name: 'Tailwind',
 		description:
 			'Tailwind CSS - это утилитарный CSS-фреймворк, который предоставляет готовые классы для быстрого и гибкого создания адаптивного дизайна без необходимости писать пользовательские стили.',
 		logo: tailwindLogo,
@@ -104,7 +104,7 @@ const skills = [
 
 	{
 		id: 13,
-		name: 'RESTful API',
+		name: 'API',
 		description:
 			'RESTful API - это архитектурный стиль для создания веб-сервисов, который использует HTTP методы для взаимодействия с ресурсами и обмена данными между клиентом и сервером.',
 		logo: restapiLogo,

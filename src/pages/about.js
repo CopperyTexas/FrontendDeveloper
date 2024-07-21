@@ -66,10 +66,10 @@ const About = () => {
 				<Layout className='pt-16'>
 					<AnimatedText
 						text='Целеустремленность ведет к достижениям'
-						className=' !text-7xl !text-center xl:!text-5xl lg:!text-center lg:!text-7xl md:!text-5xl sm:!text-3xl'
+						className=' !text-7xl !text-center xl:!text-5xl lg:!text-center lg:!text-5xl md:!text-5xl sm:!text-3xl'
 					/>
 					<div className='grid w-full grid-cols-8 gap-16 mt-16 sm:gap-8'>
-						<div className='col-span-3 flex flex-col items-start justify-start mt-4 dark:text-light 2xl:col-span-4 '>
+						<div className='col-span-3 flex flex-col items-start justify-start mt-4 dark:text-light xl:col-span-4  2xl:col-span-4 lg:col-span-8'>
 							<p className='font-medium text-lg 2xl:text-sm xl:text-xs '>
 								<span className='p-1 pr-2 font-bold text-xl text-dark bg-primaryDark m-2 ml-0 rounded-lg 2xl:text-sm'>
 									Привет!
@@ -134,7 +134,7 @@ const About = () => {
 							</p>
 						</div>
 
-						<div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 mt-4 dark:bg-dark dark:border-primaryDark 2xl:col-span-4'>
+						<div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 mt-4 dark:bg-dark dark:border-primaryDark  xl:col-span-4 lg:col-span-5 2xl:col-span-4'>
 							<div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-primaryDark dark:bg-opacity-60'></div>
 							<motion.div
 								initial='initial'
@@ -152,58 +152,58 @@ const About = () => {
 								/>
 							</motion.div>
 						</div>
-						<div className='col-span-2 flex flex-col justify-between mt-4 dark:text-light 2xl:col-span-8 2xl:flex-row'>
+						<div className='col-span-2 flex flex-col justify-between mt-4 dark:text-light 2xl:col-span-8 2xl:flex-row 3xl:col-span-8 3xl:flex-row lg:col-span-3 lg:flex-col '>
 							<div className='flex flex-col items-end justify-center'>
 								<AchievementColor />
-								<span className='inline-block text-7xl font-bold'>
+								<span className='inline-block text-7xl font-bold lg:text-4xl'>
 									<AnimatedNumbers value={5} />+
 								</span>
-								<h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light'>
+								<h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light lg:text-sm'>
 									Выполненых проектов
 								</h2>
 							</div>
 							<div className='flex flex-col items-end justify-center'>
 								<AchievementMono />
-								<span className='inline-block text-7xl font-bold text-dark/40 dark:text-light dark:opacity-30'>
+								<span className='inline-block text-7xl font-bold text-dark/40 dark:text-light dark:opacity-30 lg:text-4xl'>
 									<AnimatedNumbers value={100} />+
 								</span>
-								<h2 className='text-xl font-medium capitalize text-dark/40 dark:text-light dark:opacity-30'>
+								<h2 className='text-xl font-medium capitalize text-dark/40 dark:text-light dark:opacity-30 lg:text-sm'>
 									Довольных клиентов
 								</h2>
 							</div>
 							<div className='flex flex-col items-end justify-center'>
 								<AchievementMono />
-								<span className='inline-block text-7xl font-bold text-dark/40 dark:text-light dark:opacity-30'>
+								<span className='inline-block text-7xl font-bold text-dark/40 dark:text-light dark:opacity-30 lg:text-4xl'>
 									<AnimatedNumbers value={3} />+
 								</span>
-								<h2 className='text-xl font-medium capitalize text-dark/40 dark:text-light dark:opacity-30'>
+								<h2 className='text-xl font-medium capitalize text-dark/40 dark:text-light dark:opacity-30 lg:text-sm'>
 									Опыт работы
 								</h2>
 							</div>
 						</div>
 					</div>
 
-					<div className='w-full full-viewport-height   grid grid-cols-2 grid-rows-[auto,1fr]'>
+					<div className='w-full grid grid-cols-2 grid-rows-[auto,1fr]'>
 						{/* Верхняя строка с компонентом AnimatedText */}
 						<div className='col-span-2'>
 							<AnimatedText
 								text='Каждый навык — шаг к успеху'
-								className='mt-32 !text-7xl !text-center xl:!text-5xl lg:!text-center lg:!text-7xl md:!text-5xl sm:!text-3xl'
+								className='mt-32 !text-7xl !text-center xl:!text-5xl lg:!text-center lg:!text-5xl md:!text-5xl sm:!text-3xl'
 							/>
 						</div>
 						{/* Левый столбец с картинкой */}
-						<div className='col-span-1 flex justify-center items-center'>
+						<div className='col-span-1 flex justify-center items-center lg:col-span-2'>
 							<AnimatedSvg
 								svgPath='/images/code-typing-animate.svg'
-								className='w-full h-full animated m-16 mt-0'
+								className='w-full h-full animated lg:w-1/2'
 								delay={1000}
 								initiallyVisible={false}
 							/>
 						</div>
 						{/* Правый столбец со списком умений */}
-						<div className='col-span-1 flex justify-center items-start mt-16'>
+						<div className='col-span-1 flex justify-center items-start my-auto lg:col-span-2'>
 							<motion.div
-								className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 m-4'
+								className='grid grid-cols-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-4 2xl:grid-cols-4 gap-8 m-8 '
 								initial='hidden'
 								whileInView='visible'
 								viewport={{ once: true }}
@@ -220,7 +220,7 @@ const About = () => {
 								{skills.map(skill => (
 									<motion.div
 										key={skill.id}
-										className={`flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-md p-6 dark:border-light`}
+										className={`flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-md p-2 dark:border-light px-10`}
 										initial={{ opacity: 0, y: 20 }}
 										animate={{ opacity: 1, y: 0 }}
 										whileHover={{
@@ -230,7 +230,7 @@ const About = () => {
 										whileTap={{ scale: 0.9 }}
 										onClick={() => openModal(skill)}
 									>
-										<div className='relative w-16 h-16 mb-2'>
+										<div className='relative w-16 h-16 mb-2 xl:w-8 xl:h-8'>
 											<Image
 												src={skill.logo}
 												alt={skill.name}
@@ -238,7 +238,7 @@ const About = () => {
 												objectFit='contain'
 											/>
 										</div>
-										<h2 className='text-lg font-medium dark:text-light'>
+										<h2 className='text-lg font-medium dark:text-light 2xl:text-sm xl:text-xs'>
 											{skill.name}
 										</h2>
 									</motion.div>

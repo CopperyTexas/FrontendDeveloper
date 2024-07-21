@@ -12,7 +12,7 @@ module.exports = {
 				text: 'color',
 			},
 			transitionDuration: {
-				'300': '300ms',
+				300: '300ms',
 			},
 			transitionTimingFunction: {
 				'ease-in-out': 'ease-in-out',
@@ -31,6 +31,8 @@ module.exports = {
 			},
 		},
 		screens: {
+			'3xl': { max: '2100px' },
+			// => @media (max-width: 2100px) { ... }
 			'2xl': { max: '1535px' },
 			// => @media (max-width: 1535px) { ... }
 

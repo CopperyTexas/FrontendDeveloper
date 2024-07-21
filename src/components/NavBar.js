@@ -82,7 +82,7 @@ const NavBar = () => {
 			>
 				<span
 					className={`bg-dark dark:bg-primaryDark transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm  ${
-						isOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-0.5'
+						isOpen ? 'rotate-45 translate-y-0' : '-translate-y-0.5'
 					}`}
 				></span>
 				<span
@@ -92,7 +92,7 @@ const NavBar = () => {
 				></span>
 				<span
 					className={`bg-dark dark:bg-primaryDark transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm translate-y-0.5  ${
-						isOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-0.5'
+						isOpen ? '-rotate-45 -translate-y-2' : 'translate-y-0.5'
 					}`}
 				></span>
 			</button>
@@ -190,7 +190,7 @@ const NavBar = () => {
 				</motion.div>
 			) : null}
 			{/* Логотип */}
-			<div className='absolute left-[50%] top-2 translate-x-[-50%]'>
+			<div className='absolute left-[50%] top-2 translate-x-[-50%] z-10'>
 				<Logo />
 			</div>
 

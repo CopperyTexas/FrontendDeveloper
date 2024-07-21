@@ -61,7 +61,7 @@ export default function Home() {
 								text='Воплощаю идеи в реальность с помощью кода'
 								className='!text-7xl !text-left xl:!text-5xl lg:!text-center lg:!text-7xl md:!text-5xl sm:!text-3xl'
 							/>
-							<p className='my-5 text-xl font-medium'>
+							<p className='my-5 text-xl font-medium 2xl:text-sm xl:text-xs'>
 								Меня зовут Денис, и я - начинающий фронтенд разработчик, имею
 								опыт работы с такими современными технологиями, как React и
 								Angular. Несмотря на то, что у меня нет коммерческого опыта, я
@@ -105,7 +105,7 @@ export default function Home() {
 				</Layout>
 				<HireMe />
 
-				<div className='absolute right-2 -bottom-14  w-96 xl:w-64 md:-bottom-28'>
+				<div className='absolute right-2 -bottom-14  w-96 2xl:w-60 2xl:-bottom-10 xl:w-48 md:-bottom-28 xl:-bottom-8 xs:-bottom-8 xs:right-0'>
 					<AnimatedSvg
 						svgPath='/images/animated.svg'
 						className='w-full h-full animated '

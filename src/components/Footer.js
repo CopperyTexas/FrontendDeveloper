@@ -1,10 +1,9 @@
 import React from 'react'
-import Layout from '../components/Layout'
 
 const Footer = () => {
 	return (
-		<footer className='w-full border-t-2 border-solid border-dark font-medium text-lg dark:border-light dark:text-light md:text-sm'>
-			<Layout className='py-8 flex items-center justify-between'>
+		<footer className='w-full border-t-2 border-solid border-dark font-medium text-lg dark:border-light dark:text-light md:text-sm px-4'>
+			<div className='py-8 flex items-center justify-between'>
 				<span>{new Date().getFullYear()} &copy; All Rights Reserved.</span>
 				<a
 					href='https://storyset.com/work'
@@ -13,7 +12,7 @@ const Footer = () => {
 				>
 					Idea illustrations by Storyset
 				</a>
-			</Layout>
+			</div>
 		</footer>
 	)
 }
