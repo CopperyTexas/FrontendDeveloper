@@ -98,7 +98,7 @@ const Slider = () => {
 				</div>
 			</motion.div>
 
-			<div className='w-full h-1/2 xl:h-64 xl:col-span-2 xl:m-auto col-span-1 flex gap-4 xl:gap-1.5 justify-start self-end -ml-6'>
+			<div className='w-full h-1/2 xl:h-64 xl:col-span-2 xl:m-auto col-span-1 flex gap-4 xl:gap-1.5 justify-start self-end -ml-6 md:hidden'>
 				{slideOrder.map((index, i) => {
 					const offset =
 						(i - currentSlide + slideOrder.length) % slideOrder.length

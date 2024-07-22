@@ -59,9 +59,9 @@ export default function Home() {
 						<div className='w-1/2 flex flex-col items-start justify-center pl-10 lg:w-full md:pl-2'>
 							<AnimatedText
 								text='Воплощаю идеи в реальность с помощью кода'
-								className='!text-7xl !text-left xl:!text-5xl lg:!text-center lg:!text-7xl md:!text-5xl sm:!text-3xl'
+								className='!text-7xl !text-left xl:!text-5xl  lg:!text-7xl md:!text-5xl sm:!text-3xl'
 							/>
-							<p className='my-5 text-xl font-medium 2xl:text-sm xl:text-xs'>
+							<p className='my-5 text-xl font-medium 2xl:text-sm xl:text-base'>
 								Меня зовут Денис, и я - начинающий фронтенд разработчик, имею
 								опыт работы с такими современными технологиями, как React и
 								Angular. Несмотря на то, что у меня нет коммерческого опыта, я
