@@ -70,7 +70,7 @@ const Slider = () => {
 			</AnimatePresence>
 
 			<motion.div
-				className='w-2/3 m-auto col-span-1 flex flex-col items-start justify-center p-6 rounded-xl bg-dark bg-opacity-90'
+				className='w-2/3 m-auto col-span-1 xl:col-span-2 xl:w-full flex flex-col items-start justify-center p-6 rounded-xl bg-dark bg-opacity-90'
 				key={currentSlide}
 				initial='appear'
 				animate='center'
@@ -98,7 +98,7 @@ const Slider = () => {
 				</div>
 			</motion.div>
 
-			<div className='w-full h-1/2 col-span-1 flex gap-4 justify-start self-end -ml-6'>
+			<div className='w-full h-1/2 xl:h-64 xl:col-span-2 xl:m-auto col-span-1 flex gap-4 xl:gap-1.5 justify-start self-end -ml-6'>
 				{slideOrder.map((index, i) => {
 					const offset =
 						(i - currentSlide + slideOrder.length) % slideOrder.length
@@ -119,7 +119,7 @@ const Slider = () => {
 					)
 				})}
 			</div>
-			<div className='col-span-2 m-auto'>
+			<div className='col-span-2 mx-auto xl:self-end'>
 				<button
 					onClick={handlePrev}
 					className='bg-light text-dark rounded-full m-2 border-2 border-solid border-dark w-16 h-16 hover:bg-primaryDark font-bold hover:scale-90 transition-transform ease-in-out'
