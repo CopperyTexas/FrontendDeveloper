@@ -1,34 +1,35 @@
 {
-  "name": "developer-portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@svgr/webpack": "^8.1.0",
-    "autoprefixer": "^10.4.19",
-    "d3": "^7.9.0",
-    "eslint": "8.36.0",
-    "eslint-config-next": "13.2.4",
-    "framer-motion": "^10.6.0",
-    "next": "14.1.1",
-    "postcss": "^8.4.38",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-intersection-observer": "^9.10.3",
-    "react-simple-typewriter": "^5.0.1",
-    "typewriter-effect": "^2.21.0"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.4.4"
-  },
-  "description": "![GitHub stars](https://img.shields.io/github/stars/codebucks27/Next.js-Developer-Portfolio-Starter-Code?style=social&logo=ApacheSpark&label=Stars)&nbsp;&nbsp;\r ![GitHub forks](https://img.shields.io/github/forks/codebucks27/Next.js-Developer-Portfolio-Starter-Code?style=social&logo=KashFlow&maxAge=3600)&nbsp;&nbsp;\r ![Github Followers](https://img.shields.io/github/followers/codebucks27.svg?style=social&label=Follow)&nbsp;&nbsp;<br />",
-  "main": "next.config.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "developer-portfolio",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@svgr/webpack": "^8.1.0",
+		"autoprefixer": "^10.4.19",
+		"d3": "^7.9.0",
+		"eslint": "8.36.0",
+		"eslint-config-next": "13.2.4",
+		"framer-motion": "^10.6.0",
+		"next": "14.1.1",
+		"postcss": "^8.4.38",
+		"raw-loader": "^4.0.2",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-intersection-observer": "^9.10.3",
+		"react-simple-typewriter": "^5.0.1",
+		"typewriter-effect": "^2.21.0"
+	},
+	"devDependencies": {
+		"tailwindcss": "^3.4.4"
+	},
+	"description": "![GitHub stars](https://img.shields.io/github/stars/codebucks27/Next.js-Developer-Portfolio-Starter-Code?style=social&logo=ApacheSpark&label=Stars)&nbsp;&nbsp;\r ![GitHub forks](https://img.shields.io/github/forks/codebucks27/Next.js-Developer-Portfolio-Starter-Code?style=social&logo=KashFlow&maxAge=3600)&nbsp;&nbsp;\r ![Github Followers](https://img.shields.io/github/followers/codebucks27.svg?style=social&label=Follow)&nbsp;&nbsp;<br />",
+	"main": "next.config.js",
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
 }

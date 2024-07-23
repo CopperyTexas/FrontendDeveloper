@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
+	output: 'export', // Настройка для экспорта проекта как статические файлы
 	webpack(config, options) {
 		config.module.rules.push({
 			test: /\.svg$/,
