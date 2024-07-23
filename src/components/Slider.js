@@ -55,7 +55,7 @@ const Slider = () => {
 	}
 
 	return (
-		<div className='relative w-full slider-height md:h-1/2  rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-[auto_100px] items-center justify-center border-2 border-solid border-dark dark:border-light p-4 overflow-hidden'>
+		<div className='relative w-full slider-height md:h-max  rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-[auto_100px] items-center justify-center border-2 border-solid border-dark dark:border-light p-4 overflow-hidden'>
 			<AnimatePresence initial={false} custom={direction}>
 				<motion.div
 					key={currentSlide}
