@@ -2,6 +2,7 @@ import Head from 'next/head'
 import AnimatedText from '../components/AnimatedText'
 import Layout from '../components/Layout'
 import Slider from '../components/Slider'
+import TransitionEffect from '../components/TransitionEffect'
 
 const Projects = () => {
 	return (
@@ -10,6 +11,7 @@ const Projects = () => {
 				<title>GlebovDenis | Project</title>
 				<meta name='description' content='any description' />
 			</Head>
+			<TransitionEffect />
 			<main className='flex w-full flex-col items-center justify-center'>
 				<Layout className='pt-16'>
 					<AnimatedText

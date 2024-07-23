@@ -6,6 +6,7 @@ import AnimatedSvg from '../components/AnimatedSvg'
 import AnimatedText from '../components/AnimatedText'
 import Layout from '../components/Layout'
 import SkillModal from '../components/SkillModal'
+import TransitionEffect from '../components/TransitionEffect'
 import { AchievementColor, AchievementMono } from '../components/icons'
 import skills from '../data/skills'
 import profilePic from '../images/photo_me.jpg'
@@ -62,6 +63,7 @@ const About = () => {
 				<title>GlebovDenis | AboutPage</title>
 				<meta name='description' content='any description' />
 			</Head>
+			<TransitionEffect />
 			<main className='flex w-full flex-col items-center justify-center'>
 				<Layout className='pt-16'>
 					<AnimatedText
@@ -201,9 +203,14 @@ const About = () => {
 							/>
 						</div>
 						{/* Правый столбец со списком умений */}
-						<div className='col-span-1 flex justify-center items-start my-auto lg:col-span-2'>
+						<motion.div
+							className='col-span-1 flex justify-center items-start my-auto lg:col-span-2'
+							initial={{ opacity: 0, x: 100 }} // начальное положение вне экрана справа
+							animate={{ opacity: 1, x: 0 }} // конечное положение на экране
+							transition={{ delay: 5, duration: 1 }} // задержка и продолжительность анимации
+						>
 							<motion.div
-								className='grid grid-cols-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-4 2xl:grid-cols-4 gap-8 m-8 '
+								className='grid grid-cols-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-4 2xl:grid-cols-4 gap-8 m-8'
 								initial='hidden'
 								whileInView='visible'
 								viewport={{ once: true }}
@@ -220,7 +227,7 @@ const About = () => {
 								{skills.map(skill => (
 									<motion.div
 										key={skill.id}
-										className={`flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-md p-2 dark:border-light px-10`}
+										className='flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-md p-2 dark:border-light px-10'
 										initial={{ opacity: 0, y: 20 }}
 										animate={{ opacity: 1, y: 0 }}
 										whileHover={{
@@ -247,7 +254,7 @@ const About = () => {
 							{selectedSkill && (
 								<SkillModal skill={selectedSkill} onClose={closeModal} />
 							)}
-						</div>
+						</motion.div>
 					</div>
 				</Layout>
 			</main>

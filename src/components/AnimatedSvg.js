@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer'
 const AnimatedSvgHome = ({
 	svgPath,
 	className,
-	delay = 1000,
+	delay = 2000,
 	initiallyVisible = false,
 }) => {
 	const [svgContent, setSvgContent] = useState('')
