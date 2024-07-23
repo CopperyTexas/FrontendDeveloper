@@ -55,7 +55,7 @@ const Slider = () => {
 	}
 
 	return (
-		<div className='relative w-full slider-height  rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-[auto_100px] items-center justify-center border-2 border-solid border-dark dark:border-light p-4 overflow-hidden'>
+		<div className='relative w-full slider-height md:h-max  rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-[auto_100px] items-center justify-center border-2 border-solid border-dark dark:border-light p-4 overflow-hidden'>
 			<AnimatePresence initial={false} custom={direction}>
 				<motion.div
 					key={currentSlide}
@@ -70,7 +70,7 @@ const Slider = () => {
 			</AnimatePresence>
 
 			<motion.div
-				className='w-2/3 m-auto col-span-1 xl:col-span-2 xl:w-full flex flex-col items-start justify-center p-6 rounded-xl bg-dark bg-opacity-90'
+				className='w-2/3 m-auto col-span-1 xl:col-span-2 xl:w-full flex flex-col items-start justify-center p-6 rounded-xl bg-dark bg-opacity-90 md:self-start'
 				key={currentSlide}
 				initial='appear'
 				animate='center'
@@ -78,10 +78,12 @@ const Slider = () => {
 				variants={variants}
 				transition={{ duration: 0.5 }}
 			>
-				<h3 className='font-bold text-6xl mb-6 text-light'>
+				<h3 className='font-bold text-6xl mb-6 text-light md:text-xl'>
 					{slides[currentSlide].name}
 				</h3>
-				<p className='text-light'>{slides[currentSlide].description}</p>
+				<p className='text-light md:text-sm'>
+					{slides[currentSlide].description}
+				</p>
 				<div className='mt-6 flex item-center justify-center'>
 					<motion.a
 						href={slides[currentSlide].srcGit}

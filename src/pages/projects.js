@@ -16,7 +16,7 @@ const Projects = () => {
 						text='Каждый проект - новая вершина'
 						className='mb-10 !text-7xl !text-center xl:!text-5xl lg:!text-center lg:!text-7xl md:!text-5xl sm:!text-3xl'
 					/>
-					<div className='w-full slider-height'>
+					<div className='w-full slider-height md:h-screen'>
 						<Slider />
 					</div>
 				</Layout>

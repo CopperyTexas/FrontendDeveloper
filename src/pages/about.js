@@ -134,7 +134,7 @@ const About = () => {
 							</p>
 						</div>
 
-						<div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 mt-4 dark:bg-dark dark:border-primaryDark  xl:col-span-4 lg:col-span-5 2xl:col-span-4'>
+						<div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 md:p-4 xl:p-6 mt-4 dark:bg-dark dark:border-primaryDark  xl:col-span-4 lg:col-span-5 2xl:col-span-4'>
 							<div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-primaryDark dark:bg-opacity-60'></div>
 							<motion.div
 								initial='initial'

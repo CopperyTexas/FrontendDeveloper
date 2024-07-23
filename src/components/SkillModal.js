@@ -34,7 +34,7 @@ const SkillModal = ({ skill, onClose }) => {
 
 	return createPortal(
 		<div className='fixed inset-0 bg-dark bg-opacity-50 flex items-center justify-center z-50 fade-in dark:bg-light dark:bg-opacity-50'>
-			<div className='bg-light border-2 border-solid border-dark p-2 rounded-lg w-1/3 2xl:w-1/2 2xl:h-1/5 xl:w-2/3 xl:h-1/4 h-1/6 text-center items-center relative grid grid-cols-2 grid-rows-3 md:flex md:flex-col slide-in dark:border-light dark:bg-dark dark:text-light'>
+			<div className='bg-light border-2 border-solid border-dark p-2 rounded-lg w-1/3 2xl:w-1/2  xl:w-2/3  h-max text-center items-center relative grid grid-cols-2 grid-rows-3 md:flex md:flex-col slide-in dark:border-light dark:bg-dark dark:text-light'>
 				<div className='relative w-full h-full mx-auto col-span-1 row-span-3'>
 					<Image
 						src={skill.logo}
