@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import Link from 'next/link'
-import AnimatedSvg from '../components/AnimatedSvg'
 import AnimatedText from '../components/AnimatedText'
 import CodeAnimation from '../components/CodeAnimation'
 import HireMe from '../components/HireMe'
 import Layout from '../components/Layout'
 import TransitionEffect from '../components/TransitionEffect'
 import { LinkArrow } from '../components/icons'
+import SvgHome from '../images/animated.svg'
 // Варианты анимации для изображения
 const imageVariant = {
 	initial: { opacity: 0, x: 100 },
@@ -108,12 +108,13 @@ export default function Home() {
 				<HireMe />
 
 				<div className='absolute right-2 -bottom-14  w-96 2xl:w-60 2xl:-bottom-10 xl:w-48 md:-bottom-28 xl:-bottom-8 xs:-bottom-8 xs:right-0'>
-					<AnimatedSvg
-						svgPath='/images/animated.svg'
-						className='w-full h-full animated '
-						delay={2000}
-						initiallyVisible={true}
-					/>
+					<motion.div
+						initial='initial'
+						animate='animate'
+						variants={imageVariant}
+					>
+						<SvgHome />
+					</motion.div>
 				</div>
 			</main>
 		</>

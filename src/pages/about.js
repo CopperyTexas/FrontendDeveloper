@@ -2,13 +2,13 @@ import { motion, useInView, useMotionValue, useSpring } from 'framer-motion'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
-import AnimatedSvg from '../components/AnimatedSvg'
 import AnimatedText from '../components/AnimatedText'
 import Layout from '../components/Layout'
 import SkillModal from '../components/SkillModal'
 import TransitionEffect from '../components/TransitionEffect'
 import { AchievementColor, AchievementMono } from '../components/icons'
 import skills from '../data/skills'
+import Svg from '../images/code-type.svg'
 import profilePic from '../images/photo_me.jpg'
 
 const imageVariant = {
@@ -195,19 +195,21 @@ const About = () => {
 						</div>
 						{/* Левый столбец с картинкой */}
 						<div className='col-span-1 flex justify-center items-center lg:col-span-2'>
-							<AnimatedSvg
-								svgPath='/images/code-typing-animate.svg'
-								className='w-full h-full animated lg:w-1/2'
-								delay={1000}
-								initiallyVisible={false}
-							/>
+							<motion.div
+								initial={{ opacity: 0, x: -100 }} // начальное положение вне экрана справа
+								animate={{ opacity: 1, x: 0 }} // конечное положение на экране
+								transition={{ delay: 4, duration: 1 }} // задержка и продолжительность анимации
+								className='w-full h-full lg:w-1/2'
+							>
+								<Svg />
+							</motion.div>
 						</div>
 						{/* Правый столбец со списком умений */}
 						<motion.div
 							className='col-span-1 flex justify-center items-start my-auto lg:col-span-2'
 							initial={{ opacity: 0, x: 100 }} // начальное положение вне экрана справа
 							animate={{ opacity: 1, x: 0 }} // конечное положение на экране
-							transition={{ delay: 5, duration: 1 }} // задержка и продолжительность анимации
+							transition={{ delay: 4, duration: 1 }} // задержка и продолжительность анимации
 						>
 							<motion.div
 								className='grid grid-cols-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-4 2xl:grid-cols-4 gap-8 m-8'
