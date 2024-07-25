@@ -8,9 +8,11 @@
 		"start": "next start",
 		"lint": "next lint",
 		"export": "next build && next export",
-		"deploy": "gh-pages -d out"
+		"deploy": "gh-pages -d out",
+		"analyze": "cross-env ANALYZE=true next build"
 	},
 	"dependencies": {
+		"@next/bundle-analyzer": "^14.2.5",
 		"autoprefixer": "^10.4.19",
 		"d3": "^7.9.0",
 		"eslint": "8.36.0",
@@ -23,12 +25,16 @@
 		"react-dom": "18.2.0",
 		"react-intersection-observer": "^9.10.3",
 		"react-simple-typewriter": "^5.0.1",
+		"sharp": "^0.33.4",
 		"typewriter-effect": "^2.21.0"
 	},
 	"devDependencies": {
 		"@svgr/webpack": "^8.1.0",
+		"cross-env": "^7.0.3",
+		"css-minimizer-webpack-plugin": "^7.0.0",
 		"gh-pages": "^6.1.1",
-		"tailwindcss": "^3.4.4"
+		"tailwindcss": "^3.4.4",
+		"terser-webpack-plugin": "^5.3.10"
 	},
 	"description": "![GitHub stars](https://img.shields.io/github/stars/codebucks27/Next.js-Developer-Portfolio-Starter-Code?style=social&logo=ApacheSpark&label=Stars)&nbsp;&nbsp;\r ![GitHub forks](https://img.shields.io/github/forks/codebucks27/Next.js-Developer-Portfolio-Starter-Code?style=social&logo=KashFlow&maxAge=3600)&nbsp;&nbsp;\r ![Github Followers](https://img.shields.io/github/followers/codebucks27.svg?style=social&label=Follow)&nbsp;&nbsp;<br />",
 	"main": "next.config.js",
