@@ -4,23 +4,18 @@ import { useState } from 'react'
 import slides from '../data/slides'
 import SvgProject from '../images/project.svg'
 import { GithubIcon } from './icons'
-const imageVariant = {
-	initial: { opacity: 0, x: 100 },
-	animate: {
-		opacity: 1,
-		x: 0,
-		transition: {
-			duration: 1.5,
-			ease: 'easeInOut',
-		},
-	},
-}
+
 const variants = {
 	disappear: { x: '-100%', opacity: 0 },
-	moveLeft: { x: '-100%', opacity: 1 },
 	center: { x: '0%', opacity: 1 },
-	appear: { x: '-100%', opacity: 0 },
-	exit: { x: '100%', opacity: 1 },
+	appear: { x: '100%', opacity: 0 },
+	initial: { opacity: 0, x: '100%' },
+}
+
+const modalVariants = {
+	hidden: { opacity: 0, scale: 0.8 },
+	visible: { opacity: 1, scale: 1 },
+	exit: { opacity: 0, scale: 0.8 },
 }
 
 const Slider = () => {
@@ -28,6 +23,7 @@ const Slider = () => {
 	const [isAnimating, setIsAnimating] = useState(false)
 	const [currentImage, setCurrentImage] = useState(0)
 	const [direction, setDirection] = useState('')
+	const [isModalOpen, setIsModalOpen] = useState(false)
 
 	const handleNextProject = () => {
 		if (isAnimating) return
@@ -59,6 +55,14 @@ const Slider = () => {
 
 	const onAnimationComplete = () => {
 		setIsAnimating(false)
+	}
+
+	const openModal = () => {
+		setIsModalOpen(true)
+	}
+
+	const closeModal = () => {
+		setIsModalOpen(false)
 	}
 
 	return (
@@ -95,6 +99,7 @@ const Slider = () => {
 				key={currentSlide}
 				initial='disappear'
 				animate='center'
+				exit='disappear'
 				variants={variants}
 				transition={{ duration: 0.5 }}
 			>
@@ -119,49 +124,53 @@ const Slider = () => {
 
 			{/* Правая часть с изображениями */}
 			<div className='relative w-full h-full flex flex-col items-center justify-center col-span-1 col-start-2 row-start-1 row-span-3'>
-				<div className='w-full h-3/4 flex items-center justify-center relative border-2 border-solid border-dark rounded-lg overflow-hidden'>
-					<AnimatePresence
-						initial={false}
-						custom={direction}
-						onExitComplete={onAnimationComplete}
+				<div
+					className='w-full h-3/4 flex items-center justify-center relative border-2 border-solid border-dark rounded-lg overflow-hidden cursor-pointer'
+					onClick={openModal}
+				>
+					<motion.div
+						key={currentSlide}
+						className='absolute inset-0 bg-cover bg-center '
+						initial='appear'
+						animate='center'
+						variants={variants}
+						transition={{ duration: 0.5 }}
 					>
-						<motion.div
-							key={currentImage}
-							className='relative w-full h-full'
-							initial='disappear'
-							animate='center'
-							variants={variants}
-							transition={{ duration: 1 }}
-						>
-							<Image
-								src={slides[currentSlide].images[currentImage]}
-								alt={`${slides[currentSlide].name} image ${currentImage + 1}`}
-								fill
-								style={{ objectFit: 'cover' }}
-								sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-								priority
-							/>
-						</motion.div>
-					</AnimatePresence>
+						<Image
+							src={slides[currentSlide].images[currentImage]}
+							alt={`${slides[currentSlide].name} image ${currentImage + 1}`}
+							fill
+							style={{ objectFit: 'cover' }}
+							sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+							priority
+						/>
+					</motion.div>
 					<button
-						onClick={handlePrevImage}
+						onClick={e => {
+							e.stopPropagation()
+							handlePrevImage()
+						}}
 						className='bg-light text-dark rounded-full m-2 border-2 border-solid border-dark w-8 h-8 hover:bg-primaryDark font-bold hover:scale-90 transition-transform ease-in-out absolute top-1/2 left-0 transform -translate-y-1/2'
 					>
 						&lt;
 					</button>
 					<button
-						onClick={handleNextImage}
+						onClick={e => {
+							e.stopPropagation()
+							handleNextImage()
+						}}
 						className='bg-light text-dark rounded-full m-2 border-2 border-solid border-dark w-8 h-8 hover:bg-primaryDark font-bold hover:scale-90 transition-transform ease-in-out absolute top-1/2 right-0 transform -translate-y-1/2'
 					>
 						&gt;
 					</button>
 				</div>
 			</div>
+
 			<motion.div
 				className='col-start-2 row-start-3 w-1/2 h-1/2 ml-auto'
 				initial='initial'
-				animate='animate'
-				variants={imageVariant}
+				animate='center'
+				variants={variants}
 			>
 				<SvgProject />
 			</motion.div>
@@ -180,6 +189,56 @@ const Slider = () => {
 					&gt;
 				</button>
 			</div>
+
+			{/* Модальное окно */}
+			<AnimatePresence>
+				{isModalOpen && (
+					<motion.div
+						className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50'
+						initial='hidden'
+						animate='visible'
+						exit='exit'
+						variants={modalVariants}
+						onClick={closeModal}
+					>
+						<motion.div
+							className='relative w-3/4 h-3/4 bg-white rounded-lg overflow-hidden'
+							onClick={e => e.stopPropagation()}
+						>
+							<div className='absolute top-2 right-2'>
+								<button
+									onClick={closeModal}
+									className='bg-red-500 text-white rounded-full p-2'
+								>
+									X
+								</button>
+							</div>
+							<div className='relative w-full h-full'>
+								<Image
+									src={slides[currentSlide].images[currentImage]}
+									alt={`${slides[currentSlide].name} image ${currentImage + 1}`}
+									fill
+									style={{ objectFit: 'cover' }}
+									sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+									priority
+								/>
+								<button
+									onClick={handlePrevImage}
+									className='bg-light text-dark rounded-full m-2 border-2 border-solid border-dark w-8 h-8 hover:bg-primaryDark font-bold hover:scale-90 transition-transform ease-in-out absolute top-1/2 left-0 transform -translate-y-1/2'
+								>
+									&lt;
+								</button>
+								<button
+									onClick={handleNextImage}
+									className='bg-light text-dark rounded-full m-2 border-2 border-solid border-dark w-8 h-8 hover:bg-primaryDark font-bold hover:scale-90 transition-transform ease-in-out absolute top-1/2 right-0 transform -translate-y-1/2'
+								>
+									&gt;
+								</button>
+							</div>
+						</motion.div>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</div>
 	)
 }
