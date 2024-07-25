@@ -66,7 +66,7 @@ const Slider = () => {
 	}
 
 	return (
-		<div className='relative w-full slider-height md:h-2/3 rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-4 xl:grid-rows-5 gap-4 items-center justify-center border-2 border-solid border-dark dark:border-light p-4 overflow-hidden '>
+		<div className='relative w-full slider-height md:h-3/4 rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-4 xl:grid-rows-5 gap-4 items-center justify-center border-2 border-solid border-dark dark:border-light p-4 overflow-hidden '>
 			{/* Левая часть с информацией о проекте */}
 			<AnimatePresence
 				initial={false}
