@@ -66,7 +66,7 @@ const Slider = () => {
 	}
 
 	return (
-		<div className='relative w-full slider-height md:h-max rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-4 gap-4 items-center justify-center border-2 border-solid border-dark dark:border-light p-4 overflow-hidden'>
+		<div className='relative w-full slider-height md:h-2/3 rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-4 xl:grid-rows-5 gap-4 items-center justify-center border-2 border-solid border-dark dark:border-light p-4 overflow-hidden '>
 			{/* Левая часть с информацией о проекте */}
 			<AnimatePresence
 				initial={false}
@@ -95,7 +95,7 @@ const Slider = () => {
 			</AnimatePresence>
 
 			<motion.div
-				className='w-2/3 h-full justify-center m-auto  col-span-1 row-span-3 xl:col-span-2 xl:w-full flex flex-col items-start  p-6 rounded-xl bg-dark bg-opacity-90 md:self-start'
+				className='w-full h-full justify-around m-auto  col-span-1 row-span-3 xl:col-span-2 xl:row-start-1 xl:row-span-2 xl:w-full flex flex-col items-start   p-6 rounded-xl bg-dark bg-opacity-90 md:row-span-4'
 				key={currentSlide}
 				initial='disappear'
 				animate='center'
@@ -103,10 +103,10 @@ const Slider = () => {
 				variants={variants}
 				transition={{ duration: 0.5 }}
 			>
-				<h3 className='font-bold text-6xl mb-6 text-light md:text-xl'>
+				<h3 className='font-bold text-6xl mb-6 text-light md:text-xl lg:text-2xl'>
 					{slides[currentSlide].name}
 				</h3>
-				<p className='text-light md:text-sm'>
+				<p className='text-light md:text-sm lg:text-sm'>
 					{slides[currentSlide].description}
 				</p>
 				<div className='mt-6 flex item-center justify-center'>
@@ -115,7 +115,7 @@ const Slider = () => {
 						target='_blank'
 						whileHover={{ y: -2 }}
 						whileTap={{ scale: 0.9 }}
-						className='w-16 bg-light rounded-full'
+						className='w-16 bg-light rounded-full xl:w-10'
 					>
 						<GithubIcon />
 					</motion.a>
@@ -123,9 +123,9 @@ const Slider = () => {
 			</motion.div>
 
 			{/* Правая часть с изображениями */}
-			<div className='relative w-full h-full flex flex-col items-center justify-center col-span-1 col-start-2 row-start-1 row-span-3'>
+			<div className='relative w-full h-full flex flex-col items-center justify-center col-span-1 col-start-2 row-start-1 row-span-3 xl:col-span-2 xl:row-start-3 xl:row-span-2 md:hidden'>
 				<div
-					className='w-full h-3/4 flex items-center justify-center relative border-2 border-solid border-dark rounded-lg overflow-hidden cursor-pointer'
+					className='w-full h-3/4 flex items-center justify-center relative border-2 border-solid border-dark rounded-lg overflow-hidden cursor-pointer hover:border-primaryDark'
 					onClick={openModal}
 				>
 					<motion.div
@@ -167,7 +167,7 @@ const Slider = () => {
 			</div>
 
 			<motion.div
-				className='col-start-2 row-start-3 w-1/2 h-1/2 ml-auto'
+				className='absolute -bottom-16 2xl:-bottom-10 right-0 z-50 w-96 2xl:w-60 xl:w-48  xl:-bottom-8 md:hidden'
 				initial='initial'
 				animate='center'
 				variants={variants}
@@ -175,7 +175,7 @@ const Slider = () => {
 				<SvgProject />
 			</motion.div>
 			{/* Кнопки переключения проектов */}
-			<div className='row-start-4 col-span-2 mx-auto h-min self-end'>
+			<div className='row-start-4 col-span-2 mx-auto h-min self-end xl:row-start-5'>
 				<button
 					onClick={handlePrevProject}
 					className='bg-light text-dark rounded-full m-2 border-2 border-solid border-dark w-16 h-16 hover:bg-primaryDark font-bold hover:scale-90 transition-transform ease-in-out'
@@ -194,7 +194,7 @@ const Slider = () => {
 			<AnimatePresence>
 				{isModalOpen && (
 					<motion.div
-						className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50'
+						className='fixed inset-0 flex items-center justify-center bg-dark dark:bg-light dark:bg-opacity-70 bg-opacity-70 z-50'
 						initial='hidden'
 						animate='visible'
 						exit='exit'
@@ -202,15 +202,15 @@ const Slider = () => {
 						onClick={closeModal}
 					>
 						<motion.div
-							className='relative w-3/4 h-3/4 bg-white rounded-lg overflow-hidden'
+							className='relative w-3/4 h-3/4 bg-white rounded-lg overflow-hidden border-2 border-solid border-dark '
 							onClick={e => e.stopPropagation()}
 						>
-							<div className='absolute top-2 right-2'>
+							<div className='absolute top-2 right-2 z-20'>
 								<button
+									className='m-auto w-full border-2 border-solid border-dark text-light py-2 px-4 rounded-lg font-medium bg-dark hover:bg-primaryDark hover:text-dark transition-colors duration-300 ease-in-out dark:border-light dark:hover:border-dark'
 									onClick={closeModal}
-									className='bg-red-500 text-white rounded-full p-2'
 								>
-									X
+									Закрыть
 								</button>
 							</div>
 							<div className='relative w-full h-full'>

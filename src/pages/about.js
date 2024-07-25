@@ -198,7 +198,7 @@ const About = () => {
 							<motion.div
 								initial={{ opacity: 0, x: -100 }} // начальное положение вне экрана справа
 								animate={{ opacity: 1, x: 0 }} // конечное положение на экране
-								transition={{ delay: 4, duration: 1 }} // задержка и продолжительность анимации
+								transition={{ delay: 3, duration: 1 }} // задержка и продолжительность анимации
 								className='w-full h-full lg:w-1/2'
 							>
 								<Svg />
@@ -209,7 +209,7 @@ const About = () => {
 							className='col-span-1 flex justify-center items-start my-auto lg:col-span-2'
 							initial={{ opacity: 0, x: 100 }} // начальное положение вне экрана справа
 							animate={{ opacity: 1, x: 0 }} // конечное положение на экране
-							transition={{ delay: 4, duration: 1 }} // задержка и продолжительность анимации
+							transition={{ delay: 3, duration: 1 }} // задержка и продолжительность анимации
 						>
 							<motion.div
 								className='grid grid-cols-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-4 2xl:grid-cols-4 gap-8 m-8'
