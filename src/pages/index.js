@@ -87,7 +87,7 @@ export default function Home() {
 					</div>
 				</Layout>
 				<HireMe />
-				<div className='absolute right-2 -bottom-14 w-96 2xl:w-60 2xl:-bottom-10 xl:w-48 md:-bottom-28 xl:-bottom-8 xs:-bottom-8 xs:right-0'>
+				<div className='absolute right-2 -bottom-14 w-96 2xl:w-60 2xl:-bottom-10 xl:w-48 md:-bottom-24 xl:-bottom-8  xs:hidden'>
 					<motion.div
 						initial='initial'
 						animate='animate'

@@ -66,7 +66,7 @@ const Slider = () => {
 	}
 
 	return (
-		<div className='relative w-full slider-height md:h-3/4 rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-4 xl:grid-rows-5 gap-4 items-center justify-center border-2 border-solid border-dark dark:border-light p-4 overflow-hidden '>
+		<div className='relative w-full slider-height  rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-4 xl:grid-rows-5 gap-4 items-center justify-center border-2 border-solid border-dark dark:border-light p-4 overflow-hidden md:h-full'>
 			{/* Левая часть с информацией о проекте */}
 			<AnimatePresence
 				initial={false}
@@ -95,7 +95,7 @@ const Slider = () => {
 			</AnimatePresence>
 
 			<motion.div
-				className='w-full h-full justify-around m-auto  col-span-1 row-span-3 xl:col-span-2 xl:row-start-1 xl:row-span-2 xl:w-full flex flex-col items-start   p-6 rounded-xl bg-dark bg-opacity-90 md:row-span-4'
+				className='w-full h-max justify-around m-auto  col-span-1 row-span-3 xl:col-span-2 xl:row-start-1 xl:row-span-2  flex flex-col items-start   p-6 rounded-xl bg-dark bg-opacity-90 md:row-span-4'
 				key={currentSlide}
 				initial='disappear'
 				animate='center'
