@@ -3,6 +3,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true',
 })
 
+const TerserPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+
 const nextConfig = {
 	webpack(config, { isServer }) {
 		config.module.rules.push({
@@ -11,9 +14,6 @@ const nextConfig = {
 		})
 
 		if (!isServer) {
-			const TerserPlugin = require('terser-webpack-plugin')
-			const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-
 			config.optimization.minimizer.push(
 				new TerserPlugin({
 					terserOptions: {
@@ -38,7 +38,14 @@ const nextConfig = {
 		return config
 	},
 	images: {
-		domains: ['your-image-domain.com'], // Добавьте домены, с которых вы загружаете изображения
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'your-image-domain.com',
+				port: '',
+				pathname: '/**',
+			},
+		],
 	},
 	compress: true, // Включение сжатия ответа сервера
 	reactStrictMode: true,
