@@ -1,15 +1,17 @@
+// Импорт фреймворков
 import Head from 'next/head'
+
+// Импорт компонентов
 import AnimatedText from '../components/AnimatedText'
 import Layout from '../components/Layout'
 import Slider from '../components/Slider'
 import TransitionEffect from '../components/TransitionEffect'
-
 const Projects = () => {
 	return (
 		<>
 			<Head>
 				<title>GlebovDenis | Project</title>
-				<meta name='description' content='any description' />
+				<meta name='description' content='Completed projects by Denis Glebov' />
 			</Head>
 			<TransitionEffect />
 			<main className='flex w-full flex-col items-center justify-center'>

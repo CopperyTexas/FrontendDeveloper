@@ -1,9 +1,14 @@
+// Импорт фреймворков
 import { AnimatePresence } from 'framer-motion'
 import { Montserrat } from 'next/font/google'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+
+// Импорт компонентов
 import Footer from '../components/Footer'
 import NavBar from '../components/NavBar'
+
+// Импорт стилей
 import '../styles/globals.css'
 
 const montserrat = Montserrat({
@@ -13,6 +18,7 @@ const montserrat = Montserrat({
 
 export default function App({ Component, pageProps }) {
 	const router = useRouter()
+
 	return (
 		<>
 			<Head>
@@ -22,10 +28,13 @@ export default function App({ Component, pageProps }) {
 			<main
 				className={`${montserrat.variable} font-mont bg-light w-full flex flex-col dark:bg-dark`}
 			>
+				{/* Навигационная панель */}
 				<NavBar />
+				{/* Анимация переходов между страницами */}
 				<AnimatePresence mode='wait'>
 					<Component key={router.asPath} {...pageProps} />
 				</AnimatePresence>
+				{/* Подвал сайта */}
 				<Footer />
 			</main>
 		</>

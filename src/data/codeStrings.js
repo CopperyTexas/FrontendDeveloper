@@ -1,3 +1,4 @@
+// Текст для анимации
 const codeStrings = [
 	`< !DOCTYPE html >`,
 	`< html lang="ru" >`,

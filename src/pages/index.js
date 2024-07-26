@@ -1,15 +1,20 @@
-import { motion } from 'framer-motion' // Импорт анимаций
-import dynamic from 'next/dynamic' // Импорт для динамической загрузки компонентов
-import Head from 'next/head' // Импорт для управления <head> секцией
-import Link from 'next/link' // Импорт для создания ссылок
-import AnimatedText from '../components/AnimatedText' // Импорт компонента анимированного текста
-import CodeAnimation from '../components/CodeAnimation' // Импорт компонента анимации кода
-import Layout from '../components/Layout' // Импорт компонента макета страницы
-import TransitionEffect from '../components/TransitionEffect' // Импорт компонента эффекта перехода
-import { LinkArrow } from '../components/icons' // Импорт иконки стрелки для ссылок
-import codeStrings from '../data/codeStrings' // Импорт строк кода для анимации
-import imageVariant from '../data/imageVariants' // Импорт вариантов анимации для изображения
-import SvgHome from '../images/animated.svg' // Импорт SVG изображения
+// Импорт фреймворков
+import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
+import Head from 'next/head'
+import Link from 'next/link'
+
+// Импорт компонентов
+import AnimatedText from '../components/AnimatedText'
+import CodeAnimation from '../components/CodeAnimation'
+import Layout from '../components/Layout'
+import TransitionEffect from '../components/TransitionEffect'
+import { LinkArrow } from '../components/icons'
+
+// Импорт данных и изображений
+import codeStrings from '../data/codeStrings'
+import imageVariant from '../data/imageVariants'
+import SvgHome from '../images/animated.svg'
 
 // Динамический импорт компонента HireMe с ленивой загрузкой
 const HireMe = dynamic(() => import('../components/HireMe'), {

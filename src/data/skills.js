@@ -1,3 +1,5 @@
+// Данные для умений
+// Импорт логотипов
 import angularLogo from './logos/angular.png'
 import bootstrapLogo from './logos/bootstrap.png'
 import cssLogo from './logos/css.png'
@@ -15,6 +17,7 @@ import tailwindLogo from './logos/tailwind.png'
 import typescriptLogo from './logos/typescript.png'
 import webpackLogo from './logos/webpack.png'
 
+// Массив с данными о навыках
 const skills = [
 	{
 		id: 1,
@@ -30,7 +33,6 @@ const skills = [
 			'CSS (Cascading Style Sheets) - это язык стилей, используемый для оформления и визуального представления веб-страниц, включая цвета, шрифты и макеты.',
 		logo: cssLogo,
 	},
-
 	{
 		id: 3,
 		name: 'SASS',
@@ -101,7 +103,6 @@ const skills = [
 			'Redux - это библиотека для управления состоянием в JavaScript-приложениях, которая помогает предсказуемо обновлять состояние и упрощает отладку.',
 		logo: reduxLogo,
 	},
-
 	{
 		id: 13,
 		name: 'API',
@@ -109,7 +110,6 @@ const skills = [
 			'RESTful API - это архитектурный стиль для создания веб-сервисов, который использует HTTP методы для взаимодействия с ресурсами и обмена данными между клиентом и сервером.',
 		logo: restapiLogo,
 	},
-
 	{
 		id: 14,
 		name: 'GraphQL',
