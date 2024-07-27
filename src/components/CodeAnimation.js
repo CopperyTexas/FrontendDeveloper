@@ -1,3 +1,5 @@
+// Импорты из библиотек
+import React from 'react'
 import Typewriter from 'typewriter-effect'
 
 // Компонент для отображения анимированного кода с использованием typewriter-эффекта
@@ -11,8 +13,9 @@ const CodeAnimation = ({ codeStrings, typewriterOptions }) => {
 					<span className='w-3 h-3 bg-yellow-500 rounded-full'></span>
 					<span className='w-3 h-3 bg-green-500 rounded-full'></span>
 				</div>
-				<div className='text-gray-400  text-xs'>Portfolio.html</div>
+				<div className='text-gray-400 text-xs'>Portfolio.html</div>
 			</div>
+
 			{/* Основная область с анимацией кода */}
 			<div className='flex-grow overflow-y-auto p-4'>
 				<div

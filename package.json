@@ -37,7 +37,6 @@
 		"tailwindcss": "^3.4.4",
 		"terser-webpack-plugin": "^5.3.10"
 	},
-	"description": "![GitHub stars](https://img.shields.io/github/stars/codebucks27/Next.js-Developer-Portfolio-Starter-Code?style=social&logo=ApacheSpark&label=Stars)&nbsp;&nbsp;\r ![GitHub forks](https://img.shields.io/github/forks/codebucks27/Next.js-Developer-Portfolio-Starter-Code?style=social&logo=KashFlow&maxAge=3600)&nbsp;&nbsp;\r ![Github Followers](https://img.shields.io/github/followers/codebucks27.svg?style=social&label=Follow)&nbsp;&nbsp;<br />",
 	"main": "next.config.js",
 	"keywords": [],
 	"author": "",

@@ -1,9 +1,14 @@
+// Импорт фреймворков и библиотек
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { useState } from 'react'
+
+// Импорт компонентов
+import CustomLink from '../components/CustomLink'
+import CustomMobileLink from '../components/CustomMobileLink'
 import Logo from './Logo'
 import useThemeSwitcher from './hooks/useThemeSwitcher'
+
+// Импорт иконок
 import {
 	GithubIcon,
 	LinkedInIcon,
@@ -14,55 +19,6 @@ import {
 } from './icons'
 
 /**
- * Компонент CustomLink
- * Создает настраиваемую ссылку с анимацией перехода
- */
-const CustomLink = ({ href, title, className = '' }) => {
-	const router = useRouter()
-
-	return (
-		<Link href={href} className={`${className} relative group`}>
-			{title}
-			<span
-				className={`h-[2px] inline-block bg-primaryDark absolute left-0 -bottom-0.5 
-        group-hover:w-full transition-[width] ease duration-300 ${
-					router.asPath === href ? 'w-full' : 'w-0'
-				}`}
-			>
-				&nbsp;
-			</span>
-		</Link>
-	)
-}
-
-const CustomMobileLink = ({ href, title, className = '', toggle }) => {
-	const router = useRouter()
-
-	const handleClick = () => {
-		toggle()
-		router.push(href)
-	}
-
-	return (
-		<button
-			href={href}
-			className={`${className} relative group text-light dark:text-dark my-2`}
-			onClick={handleClick}
-		>
-			{title}
-			<span
-				className={`h-[2px] inline-block bg-primaryDark absolute left-0 -bottom-0.5 
-        group-hover:w-full transition-[width] ease duration-300 ${
-					router.asPath === href ? 'w-full' : 'w-0'
-				}`}
-			>
-				&nbsp;
-			</span>
-		</button>
-	)
-}
-
-/**
  * Компонент NavBar
  * Отображает навигационную панель с логотипом и ссылками на социальные сети
  */
@@ -70,12 +26,16 @@ const NavBar = () => {
 	const [mode, setMode] = useThemeSwitcher()
 	const [isOpen, setIsOpen] = useState(false)
 
+	/**
+	 * Функция для переключения состояния меню
+	 */
 	const handleClick = () => {
 		setIsOpen(!isOpen)
 	}
-	2
+
 	return (
 		<header className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light relative md:px-8 lg:px-16 '>
+			{/* Кнопка для мобильного меню */}
 			<button
 				className='hidden flex-col justify-center items-center lg:flex'
 				onClick={handleClick}
@@ -97,6 +57,7 @@ const NavBar = () => {
 				></span>
 			</button>
 
+			{/* Навигация для десктопа */}
 			<div className='w-full flex justify-between items-center lg:hidden'>
 				<nav>
 					<CustomLink href='/' title='Home' className='mr-4 text-lg' />
@@ -108,6 +69,8 @@ const NavBar = () => {
 					/>
 				</nav>
 			</div>
+
+			{/* Мобильное меню */}
 			{isOpen ? (
 				<motion.div
 					initial={{ scale: 0, opacity: 0, x: '-50%', y: '-50%' }}
@@ -118,13 +81,13 @@ const NavBar = () => {
 						<CustomMobileLink
 							href='/'
 							title='Home'
-							className=' text-lg'
+							className='text-lg'
 							toggle={handleClick}
 						/>
 						<CustomMobileLink
 							href='/about'
 							title='About'
-							className=' text-lg'
+							className='text-lg'
 							toggle={handleClick}
 						/>
 						<CustomMobileLink
@@ -140,7 +103,7 @@ const NavBar = () => {
 							target={'_blank'}
 							whileHover={{ y: -2 }}
 							whileTap={{ scale: 0.9 }}
-							className='w-6 mx-3  bg-light rounded-full dark:bg-dark sm:mx-1'
+							className='w-6 mx-3 bg-light rounded-full dark:bg-dark sm:mx-1'
 						>
 							<GithubIcon />
 						</motion.a>
@@ -189,11 +152,13 @@ const NavBar = () => {
 					</nav>
 				</motion.div>
 			) : null}
+
 			{/* Логотип */}
 			<div className='absolute left-[50%] top-2 translate-x-[-50%] z-10'>
 				<Logo />
 			</div>
 
+			{/* Навигация и социальные иконки для десктопа */}
 			<nav className='flex items-center justify-center lg:hidden'>
 				<motion.a
 					href='https://github.com/CopperyTexas'

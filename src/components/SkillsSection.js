@@ -1,10 +1,15 @@
+// Импорт фреймворков
 import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
 import { useRef } from 'react'
-import Svg from '../images/code-type.svg'
+
+// Импорт компонентов
 import AnimatedText from './AnimatedText'
 import SkillModal from './SkillModal'
-// Ваша часть кода с обновлением для анимации при прокрутке
+
+// Импорт изображений
+import Svg from '../images/code-type.svg'
+
 const SkillsSection = ({ skills, openModal, selectedSkill, closeModal }) => {
 	const ref = useRef(null)
 	const isInView = useInView(ref, { once: true })
@@ -18,24 +23,27 @@ const SkillsSection = ({ skills, openModal, selectedSkill, closeModal }) => {
 					className='mt-32 !text-7xl !text-center xl:!text-5xl lg:!text-center lg:!text-5xl md:!text-5xl sm:!text-3xl'
 				/>
 			</div>
-			{/* Левый столбец с картинкой */}
+
+			{/* Левый столбец с SVG-картинкой */}
 			<div className='col-span-1 flex justify-center items-center lg:col-span-2'>
 				<motion.div
-					initial={{ opacity: 0, x: -100 }} // начальное положение вне экрана справа
-					animate={isInView ? { opacity: 1, x: 0 } : {}} // конечное положение на экране
+					initial={{ opacity: 0, x: -100 }} // начальное положение вне экрана слева
+					animate={isInView ? { opacity: 1, x: 0 } : {}} // анимация при появлении на экране
 					transition={{ delay: 0.3, duration: 0.6 }} // задержка и продолжительность анимации
 					className='w-full h-full lg:w-1/2'
 				>
 					<Svg />
 				</motion.div>
 			</div>
+
 			{/* Правый столбец со списком умений */}
 			<motion.div
 				className='col-span-1 flex justify-center items-start my-auto lg:col-span-2'
 				initial={{ opacity: 0, x: 100 }} // начальное положение вне экрана справа
-				animate={isInView ? { opacity: 1, x: 0 } : {}} // конечное положение на экране
+				animate={isInView ? { opacity: 1, x: 0 } : {}} // анимация при появлении на экране
 				transition={{ delay: 0.3, duration: 0.6 }} // задержка и продолжительность анимации
 			>
+				{/* Сетка с умениями */}
 				<motion.div
 					className='grid grid-cols-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-4 2xl:grid-cols-4 gap-8 m-8'
 					initial='hidden'
@@ -45,9 +53,6 @@ const SkillsSection = ({ skills, openModal, selectedSkill, closeModal }) => {
 						hidden: { opacity: 0 },
 						visible: {
 							opacity: 1,
-							transition: {
-								staggerChildren: 0.3,
-							},
 						},
 					}}
 				>
@@ -55,13 +60,13 @@ const SkillsSection = ({ skills, openModal, selectedSkill, closeModal }) => {
 						<motion.div
 							key={skill.id}
 							className='flex flex-col items-center cursor-pointer border-2 border-solid border-dark rounded-md p-2 dark:border-light px-10'
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
+							initial={{ opacity: 0, y: 20 }} // начальное положение каждого элемента
+							animate={{ opacity: 1, y: 0 }} // конечное положение каждого элемента
 							whileHover={{
 								scale: 0.95,
-								boxShadow: '0px 4px 15px rgba(146, 227, 169, 1)',
+								boxShadow: '0px 4px 15px rgba(146, 227, 169, 1)', // эффект при наведении
 							}}
-							whileTap={{ scale: 0.9 }}
+							whileTap={{ scale: 0.9 }} // эффект при нажатии
 							onClick={() => openModal(skill)}
 						>
 							<div className='relative w-16 h-16 mb-2 xl:w-8 xl:h-8'>
@@ -69,9 +74,7 @@ const SkillsSection = ({ skills, openModal, selectedSkill, closeModal }) => {
 									src={skill.logo}
 									alt={skill.name}
 									fill
-									sizes='(max-width: 768px) 100vw,
-                          (max-width: 1200px) 50vw,
-                          33vw'
+									sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 									style={{ objectFit: 'contain' }}
 								/>
 							</div>
@@ -81,6 +84,7 @@ const SkillsSection = ({ skills, openModal, selectedSkill, closeModal }) => {
 						</motion.div>
 					))}
 				</motion.div>
+				{/* Модальное окно для выбранного умения */}
 				{selectedSkill && (
 					<SkillModal skill={selectedSkill} onClose={closeModal} />
 				)}

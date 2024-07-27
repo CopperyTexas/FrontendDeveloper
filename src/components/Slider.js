@@ -1,13 +1,18 @@
+// Импорт фреймворков
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
+
+// Импорт компонентов
 import Modal from '../components/ProjectModal'
-import imageVariant from '../data/imageVariants'
-import slides from '../data/slides'
-import SvgProject from '../images/project.svg'
 import ImageSlider from './ImageSlider'
 import ProjectInfo from './ProjectInfo'
 import ProjectNavigationButtons from './ProjectNavigationButtons'
+
+// Импорт данных и изображений
+import imageVariant from '../data/imageVariants'
+import slides from '../data/slides'
+import SvgProject from '../images/project.svg'
 
 const Slider = () => {
 	const [currentSlide, setCurrentSlide] = useState(0)
@@ -16,26 +21,30 @@ const Slider = () => {
 	const [direction, setDirection] = useState('')
 	const [isModalOpen, setIsModalOpen] = useState(false)
 
+	// Функция для перехода к следующему проекту
 	const handleNextProject = () => {
 		if (isAnimating) return
 		setDirection('next')
 		setIsAnimating(true)
 		setCurrentSlide(prev => (prev + 1) % slides.length)
-		setCurrentImage(0) // Reset image index when changing project
+		setCurrentImage(0) // Сброс индекса изображения при смене проекта
 	}
 
+	// Функция для перехода к предыдущему проекту
 	const handlePrevProject = () => {
 		if (isAnimating) return
 		setDirection('prev')
 		setIsAnimating(true)
 		setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length)
-		setCurrentImage(0) // Reset image index when changing project
+		setCurrentImage(0) // Сброс индекса изображения при смене проекта
 	}
 
+	// Функция для перехода к следующему изображению
 	const handleNextImage = () => {
 		setCurrentImage(prev => (prev + 1) % slides[currentSlide].images.length)
 	}
 
+	// Функция для перехода к предыдущему изображению
 	const handlePrevImage = () => {
 		setCurrentImage(
 			prev =>
@@ -44,21 +53,24 @@ const Slider = () => {
 		)
 	}
 
+	// Функция для завершения анимации
 	const onAnimationComplete = () => {
 		setIsAnimating(false)
 	}
 
+	// Функция для открытия модального окна
 	const openModal = () => {
 		setIsModalOpen(true)
 	}
 
+	// Функция для закрытия модального окна
 	const closeModal = () => {
 		setIsModalOpen(false)
 	}
 
 	return (
 		<div className='relative w-full slider-height rounded-2xl bg-cover bg-center grid grid-cols-2 grid-rows-4 xl:grid-rows-5 gap-4 items-center justify-center border-2 border-solid border-dark dark:border-light p-4 overflow-hidden md:h-full'>
-			{/* Левая часть с информацией о проекте */}
+			{/* Анимированное фоновое изображение */}
 			<AnimatePresence
 				initial={false}
 				custom={direction}
@@ -85,12 +97,14 @@ const Slider = () => {
 				</motion.div>
 			</AnimatePresence>
 
+			{/* Информация о проекте */}
 			<ProjectInfo
 				name={slides[currentSlide].name}
 				description={slides[currentSlide].description}
 				srcGit={slides[currentSlide].srcGit}
 			/>
-			{/* Правая часть с изображениями */}
+
+			{/* Слайдер изображений */}
 			<ImageSlider
 				slideName={slides[currentSlide].name}
 				currentImage={currentImage}
@@ -100,6 +114,7 @@ const Slider = () => {
 				openModal={openModal}
 			/>
 
+			{/* Анимированное SVG изображение */}
 			<motion.div
 				className='absolute -bottom-16 2xl:-bottom-10 right-0 z-50 w-96 2xl:w-60 xl:w-48 xl:-bottom-8 md:hidden'
 				initial='initial'

@@ -1,23 +1,30 @@
+// Импорт необходимых библиотек и компонентов
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import imageVariant from '../data/imageVariants'
 
+/**
+ * Компонент ImageSlider
+ * Отображает слайдер изображений с кнопками для переключения изображений и возможностью открытия модального окна.
+ *
+ */
 const ImageSlider = ({
-	slideName, // добавляем это свойство для имени слайда
-	currentImage,
-	images,
-	handlePrevImage,
-	handleNextImage,
-	openModal,
+	slideName, // Имя текущего слайда
+	currentImage, // Индекс текущего изображения
+	images, // Массив изображений
+	handlePrevImage, // Функция для переключения на предыдущее изображение
+	handleNextImage, // Функция для переключения на следующее изображение
+	openModal, // Функция для открытия модального окна
 }) => {
 	return (
 		<div className='relative w-full h-full flex flex-col items-center justify-center col-span-1 col-start-2 row-start-1 row-span-3 xl:col-span-2 xl:row-start-3 xl:row-span-2 md:hidden'>
 			<div
-				className='w-full h-3/4 flex items-center justify-center relative border-2 border-solid border-dark rounded-lg overflow-hidden cursor-pointer hover:border-primaryDark'
+				className='w-full h-3/4 bg-white bg-opacity-70 flex items-center justify-center relative border-2 border-solid border-dark rounded-lg overflow-hidden cursor-pointer hover:border-primaryDark'
 				onClick={openModal}
 			>
+				{/* Анимированное изображение */}
 				<motion.div
-					key={currentImage} // изменяем на currentImage, так как это логичнее для уникальности ключа
+					key={currentImage} // Используем currentImage как ключ
 					className='absolute inset-0 bg-cover bg-center'
 					initial='appear'
 					animate='center'
@@ -26,13 +33,13 @@ const ImageSlider = ({
 				>
 					<Image
 						src={images[currentImage]}
-						alt={`${slideName} image ${currentImage + 1}`} // используем slideName
+						alt={`${slideName} image ${currentImage + 1}`} // Используем slideName для alt текста
 						fill
-						style={{ objectFit: 'cover' }}
-						sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+						style={{ objectFit: 'contain' }}
 						priority
 					/>
 				</motion.div>
+				{/* Кнопка для переключения на предыдущее изображение */}
 				<button
 					onClick={e => {
 						e.stopPropagation()
@@ -42,6 +49,7 @@ const ImageSlider = ({
 				>
 					&lt;
 				</button>
+				{/* Кнопка для переключения на следующее изображение */}
 				<button
 					onClick={e => {
 						e.stopPropagation()

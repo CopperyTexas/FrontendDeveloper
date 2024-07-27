@@ -1,3 +1,4 @@
+// Импорты из библиотек
 import { motion, useInView } from 'framer-motion'
 import React, { useRef } from 'react'
 
@@ -39,7 +40,7 @@ const AnimatedText = ({ text, className = '' }) => {
 	// Разбиваем текст на отдельные слова и заранее создаем список слов
 	const words = text.split(' ').map((word, index) => (
 		<motion.span
-			key={word + '-' + index}
+			key={`${word}-${index}`}
 			className='inline-block'
 			variants={singleWord} // Применяем анимационные настройки для каждого слова
 		>
@@ -49,12 +50,12 @@ const AnimatedText = ({ text, className = '' }) => {
 
 	return (
 		<div
-			className={`w-full mx-auto flex items-center justify-center overflow-hidden  ${className}`}
+			className={`w-full mx-auto flex items-center justify-center overflow-hidden ${className}`}
 			ref={ref}
 		>
 			{isInView && (
 				<motion.h2
-					className={`inline-block w-full text-dark font-bold  dark:text-primaryDark`}
+					className='inline-block w-full text-dark font-bold dark:text-primaryDark'
 					variants={quote} // Применяем анимационные настройки для всей цитаты
 					initial='initial'
 					animate='animate'

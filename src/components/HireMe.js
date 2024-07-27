@@ -1,10 +1,14 @@
+// Импорты из библиотек
 import Link from 'next/link'
+
+// Импорты компонентов
 import { CircularText } from './icons'
 
 // Компонент кнопки "Hire Me" с анимацией и ссылкой на контакт
 const HireMe = () => {
 	return (
 		<div className='fixed left-4 -bottom-4 flex items-center justify-center overflow-hidden xs:right-0 xs:left-auto md:top-0 xs:bottom-auto xs:absolute xl:hidden xs:inline-block'>
+			{/* Обёртка для кнопки и анимированного текста */}
 			<div className='w-52 h-auto flex items-center justify-center relative md:w-40'>
 				{/* Анимированный текст по кругу */}
 				<CircularText

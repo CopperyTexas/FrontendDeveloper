@@ -6,8 +6,11 @@ import ReactImage from '../images/projects/React.png'
 import ReduxImage from '../images/projects/Redux.png'
 import AngularImage1 from '../images/projects/angular/image1.jpg'
 import AngularImage2 from '../images/projects/angular/image2.jpg'
-import NextImage1 from '../images/projects/next/image1.jpg'
-import NextImage2 from '../images/projects/next/image2.jpg'
+import NextImage2 from '../images/projects/next/About_1.png'
+import NextImage3 from '../images/projects/next/About_2.png'
+import NextImage5 from '../images/projects/next/About_mobile.png'
+import NextImage1 from '../images/projects/next/Home.png'
+import NextImage4 from '../images/projects/next/Project_2.png'
 import ReactImage1 from '../images/projects/react/image1.jpg'
 import ReactImage2 from '../images/projects/react/image2.jpg'
 import ReduxImage1 from '../images/projects/redux/image1.jpg'
@@ -20,7 +23,7 @@ const slides = [
 		name: 'Angular Project: Task Manager',
 		description: `
       Проект Task Manager – это веб-приложение, разработанное на базе Angular, предназначенное для управления задачами и проектами.
-      Приложение позволяет пользователям создавать, редактировать и удалять задачи, а также отслеживать их выполнение.
+      Приложение позволяет пользователям создавать, ред	актировать и удалять задачи, а также отслеживать их выполнение.
       Основная цель проекта – предоставить удобный инструмент для организации работы и повышения продуктивности.
     `,
 		src: AngularImage,
@@ -31,13 +34,18 @@ const slides = [
 		id: 2,
 		name: 'Next.js Project: Portfolio Website',
 		description: `
-      Проект Portfolio Website – это современное веб-приложение, созданное на базе Next.js. Это приложение предназначено для представления вашего личного или профессионального портфолио.
-      Сайт позволяет демонстрировать ваши проекты, навыки и опыт работы в интерактивном и привлекательном формате.
-      Основная цель проекта – предоставить платформу для эффективного представления ваших достижений и умений потенциальным работодателям или клиентам.
+Проект Portfolio Website – это современный и адаптивный веб-сайт портфолио, разработанный с использованием Next.js.
+			Основные функции сайта включают:
+			- Презентацию проектов и работ с использованием слайдера
+			- Детальную информацию о каждом проекте
+			- Ссылки на репозитории GitHub для просмотра исходного кода
+			- Контактную информацию и форму обратной связи
+			Основная цель проекта – продемонстрировать навыки и проекты разработчика в удобном и привлекательном формате.
+			Используемые технологии: Next.js, React, Tailwind CSS, Framer Motion.
     `,
 		src: NextJSImage,
 		srcGit: 'https://github.com/',
-		images: [NextImage1, NextImage2],
+		images: [NextImage1, NextImage2, NextImage3, NextImage4, NextImage5],
 	},
 	{
 		id: 3,

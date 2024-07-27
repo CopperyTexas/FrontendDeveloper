@@ -1,6 +1,10 @@
+// Импорт фреймворков
 import { motion } from 'framer-motion'
+
+// Импорт иконок
 import { GithubIcon } from './icons'
 
+// Основной компонент для отображения информации о проекте
 const ProjectInfo = ({ name, description, srcGit }) => {
 	return (
 		<motion.div
@@ -14,10 +18,17 @@ const ProjectInfo = ({ name, description, srcGit }) => {
 			}}
 			transition={{ duration: 0.5 }}
 		>
+			{/* Название проекта */}
 			<h3 className='font-bold text-6xl mb-6 text-light md:text-xl lg:text-2xl'>
 				{name}
 			</h3>
-			<p className='text-light md:text-sm lg:text-sm'>{description}</p>
+			{/* Описание проекта */}
+			<div className='text-light md:text-sm lg:text-sm'>
+				{description.split('\n').map((line, index) => (
+					<p key={index}>{line.trim()}</p>
+				))}
+			</div>
+			{/* Ссылка на GitHub */}
 			<div className='mt-6 flex item-center justify-center'>
 				<motion.a
 					href={srcGit}
