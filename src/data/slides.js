@@ -47,7 +47,7 @@ const slides = [
 			Используемые технологии: Next.js, React, Tailwind CSS, Framer Motion.
     `,
 		src: NextJSImage,
-		srcGit: 'https://github.com/',
+		srcGit: 'https://github.com/CopperyTexas/FrontendDeveloper',
 		images: [
 			NextImage1,
 			NextImage2,
