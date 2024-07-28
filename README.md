@@ -23,11 +23,15 @@
 
 ### Главная страница
 
-![Скриншот главной страницы](screenshots/main_page.png)
+![Скриншот главной страницы](../FrontendDeveloper/src/images/projects/next/Home.png)
 
-### Список проектов
+### Страница обо мне
 
-![Скриншот списка проектов](screenshots/projects_page.png)
+![Скриншот страницы обо мне](../FrontendDeveloper/src/images/projects/next/About.png)
+
+### Страница проектов
+
+![Скриншот страницы списка проектов](../FrontendDeveloper/src/images/projects/next/Project.png)
 
 ## Установка и запуск
 

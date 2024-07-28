@@ -6,11 +6,14 @@ import ReactImage from '../images/projects/React.png'
 import ReduxImage from '../images/projects/Redux.png'
 import AngularImage1 from '../images/projects/angular/image1.jpg'
 import AngularImage2 from '../images/projects/angular/image2.jpg'
-import NextImage2 from '../images/projects/next/About_1.png'
-import NextImage3 from '../images/projects/next/About_2.png'
-import NextImage5 from '../images/projects/next/About_mobile.png'
+import NextImage3 from '../images/projects/next/About.png'
+import NextImage5 from '../images/projects/next/About_desktop.png'
+import NextImage7 from '../images/projects/next/About_tablet.png'
 import NextImage1 from '../images/projects/next/Home.png'
-import NextImage4 from '../images/projects/next/Project_2.png'
+import NextImage2 from '../images/projects/next/Home_light.png'
+import NextImage6 from '../images/projects/next/Home_tablet.png'
+import NextImage4 from '../images/projects/next/Project.png'
+import NextImage8 from '../images/projects/next/Project_tablet.png'
 import ReactImage1 from '../images/projects/react/image1.jpg'
 import ReactImage2 from '../images/projects/react/image2.jpg'
 import ReduxImage1 from '../images/projects/redux/image1.jpg'
@@ -45,7 +48,16 @@ const slides = [
     `,
 		src: NextJSImage,
 		srcGit: 'https://github.com/',
-		images: [NextImage1, NextImage2, NextImage3, NextImage4, NextImage5],
+		images: [
+			NextImage1,
+			NextImage2,
+			NextImage3,
+			NextImage4,
+			NextImage5,
+			NextImage6,
+			NextImage7,
+			NextImage8,
+		],
 	},
 	{
 		id: 3,
