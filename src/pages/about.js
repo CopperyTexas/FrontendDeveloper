@@ -19,7 +19,7 @@ import aboutData from '../data/aboutData'
 // Импорт данных и изображений
 import imageVariant from '../data/imageVariants'
 import skills from '../data/skills'
-import profilePic from '../images/photo_me.jpg'
+import profilePic from '/public/assets/images/photo_me.jpg'
 
 // Динамический импорт компонента SkillModal
 const SkillModal = dynamic(() => import('../components/SkillModal'), {

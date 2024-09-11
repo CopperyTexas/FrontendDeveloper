@@ -8,7 +8,7 @@ import AnimatedText from './AnimatedText'
 import SkillModal from './SkillModal'
 
 // Импорт изображений
-import Svg from '../images/code-type.svg'
+import Svg from '/public/assets/images/code-type.svg'
 
 const SkillsSection = ({ skills, openModal, selectedSkill, closeModal }) => {
 	const ref = useRef(null)

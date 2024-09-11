@@ -14,7 +14,7 @@ import { LinkArrow } from '../components/icons'
 // Импорт данных и изображений
 import codeStrings from '../data/codeStrings'
 import imageVariant from '../data/imageVariants'
-import SvgHome from '../images/animated.svg'
+import SvgHome from '/public/assets/images/animated.svg'
 
 // Динамический импорт компонента HireMe с ленивой загрузкой
 const HireMe = dynamic(() => import('../components/HireMe'), {

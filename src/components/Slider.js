@@ -12,7 +12,7 @@ import ProjectNavigationButtons from './ProjectNavigationButtons'
 // Импорт данных и изображений
 import imageVariant from '../data/imageVariants'
 import slides from '../data/slides'
-import SvgProject from '../images/project.svg'
+import SvgProject from '/public/assets/images/project.svg'
 
 const Slider = () => {
 	const [currentSlide, setCurrentSlide] = useState(0)
