@@ -1,87 +1,114 @@
 // Данные для проектов
 // Импорт изображений проектов
-import AngularImage from '/public/assets/images/projects/Angular.png'
-import NextJSImage from '/public/assets/images/projects/NextJS.png'
-import ReactImage from '/public/assets/images/projects/React.png'
-import ReduxImage from '/public/assets/images/projects/Redux.png'
-import AngularImage1 from '/public/assets/images/projects/angular/image1.jpg'
-import AngularImage2 from '/public/assets/images/projects/angular/image2.jpg'
-import NextImage3 from '/public/assets/images/projects/next/About.webp'
-import NextImage5 from '/public/assets/images/projects/next/About_desktop.webp'
-import NextImage7 from '/public/assets/images/projects/next/About_tablet.webp'
-import NextImage1 from '/public/assets/images/projects/next/Home.webp'
-import NextImage2 from '/public/assets/images/projects/next/Home_light.webp'
-import NextImage6 from '/public/assets/images/projects/next/Home_tablet.webp'
-import NextImage4 from '/public/assets/images/projects/next/Project.webp'
-import NextImage8 from '/public/assets/images/projects/next/Project_tablet.webp'
-import ReactImage1 from '/public/assets/images/projects/react/image1.jpg'
-import ReactImage2 from '/public/assets/images/projects/react/image2.jpg'
-import ReduxImage1 from '/public/assets/images/projects/redux/image1.jpg'
-import ReduxImage2 from '/public/assets/images/projects/redux/image2.jpg'
+import LandingPages from '/public/assets/images/projects/LandingPages.png'
+import Game2048 from '/public/assets/images/projects/Game2048.png'
+import FintessLanding from '/public/assets/images/projects/FintessLanding.png'
+import HeroVerse from '/public/assets/images/projects/HeroVerse.png'
+import LandingPage1 from '/public/assets/images/projects/LandingPages/image1.png'
+import LandingPage2 from '/public/assets/images/projects/LandingPages/image2.png'
+import LandingPage3 from '/public/assets/images/projects/LandingPages/image3.png'
+import LandingPage4 from '/public/assets/images/projects/LandingPages/image4.png'
+import LandingPage5 from '/public/assets/images/projects/LandingPages/image5.png'
+import LandingPage6 from '/public/assets/images/projects/LandingPages/image6.png'
+import LandingPage7 from '/public/assets/images/projects/LandingPages/image7.jpeg'
+import LandingPage8 from '/public/assets/images/projects/LandingPages/image8.jpeg'
+import Game1 from '/public/assets/images/projects/Game2048/image1.png'
+import Game2 from '/public/assets/images/projects/Game2048/image2.png'
+import FintessLanding1 from '/public/assets/images/projects/FitnessLanding/image1.png'
+import FintessLanding2 from '/public/assets/images/projects/FitnessLanding/image2.png'
+import FintessLanding3 from '/public/assets/images/projects/FitnessLanding/image3.png'
+import HeroVerse1 from '/public/assets/images/projects/HeroVerse/image1.png'
+import HeroVerse2 from '/public/assets/images/projects/HeroVerse/image2.png'
+import HeroVerse3 from '/public/assets/images/projects/HeroVerse/image3.png'
+import HeroVerse4 from '/public/assets/images/projects/HeroVerse/image4.png'
+
 
 // Массив с данными о слайдах проектов
 const slides = [
 	{
 		id: 1,
-		name: 'Angular Project: Task Manager',
+		name: 'Landing Pages Collection',
 		description: `
-      Проект Task Manager – это веб-приложение, разработанное на базе Angular, предназначенное для управления задачами и проектами.
-      Приложение позволяет пользователям создавать, ред	актировать и удалять задачи, а также отслеживать их выполнение.
-      Основная цель проекта – предоставить удобный инструмент для организации работы и повышения продуктивности.
+      Коллекция адаптивных лендингов, созданных вручную для отработки навыков вёрстки. Каждый лендинг разработан с учётом современных требований к дизайну: чистая сетка, отзывчивый интерфейс и кроссбраузерная совместимость.
+В проектах использовались HTML, CSS и Tailwind CSS. Все страницы адаптированы под мобильные устройства и десктопы.
+Что реализовано:
+\t•\tАдаптивная вёрстка
+\t•\tМакеты в стиле промо и презентационных страниц
+\t•\tЧистая структура и семантический код
+
+Цель:
+Повысить уровень владения вёрсткой, потренироваться в создании интерфейсов «с нуля» и соблюдении pixel-perfect.
     `,
-		src: AngularImage,
-		srcGit: 'https://github.com/',
-		images: [AngularImage1, AngularImage2],
+		src: LandingPages,
+		srcGit: 'https://github.com/CopperyTexas/Book-shop',
+		images: [LandingPage1, LandingPage2, LandingPage3,LandingPage4,LandingPage5,LandingPage6,LandingPage7,LandingPage8],
 	},
 	{
 		id: 2,
-		name: 'Next.js Project: Portfolio Website',
+		name: '2048 Game',
 		description: `
-Проект Portfolio Website – это современный и адаптивный веб-сайт портфолио, разработанный с использованием Next.js.
-			Основные функции сайта включают:
-			- Презентацию проектов и работ с использованием слайдера
-			- Детальную информацию о каждом проекте
-			- Ссылки на репозитории GitHub для просмотра исходного кода
-			- Контактную информацию и форму обратной связи
-			Основная цель проекта – продемонстрировать навыки и проекты разработчика в удобном и привлекательном формате.
-			Используемые технологии: Next.js, React, Tailwind CSS, Framer Motion.
+Реализация классической игры 2048 на чистом JavaScript, HTML и CSS. Игра полностью повторяет механику оригинала, а также включает дополнительные функции: переключение темы (день/ночь), плавные анимации, сохранение результатов и таблицу лидеров.
+
+Что реализовано:
+\t•\tИгровое поле 4×4 с динамической генерацией плиток
+\t•\tУправление с клавиатуры
+\t•\tАнимации перемещения и слияния плиток
+\t•\tПодсчёт очков и таблица лидеров (сохраняется в localStorage)
+\t•\tПереключение между светлой и тёмной темой
+\t•\tЧистый, адаптивный интерфейс без фреймворков
+
+Цель:
+Развить навыки работы с DOM, логикой игры и пользовательским интерфейсом. Этот проект стал отличной практикой в реализации взаимодействия компонентов, хранения данных и создания UI с нуля.
     `,
-		src: NextJSImage,
-		srcGit: 'https://github.com/CopperyTexas/FrontendDeveloper',
+		src: Game2048,
+		srcGit: 'https://github.com/CopperyTexas/2048',
 		images: [
-			NextImage1,
-			NextImage2,
-			NextImage3,
-			NextImage4,
-			NextImage5,
-			NextImage6,
-			NextImage7,
-			NextImage8,
+	Game1, Game2
 		],
 	},
 	{
 		id: 3,
-		name: 'React Project: E-commerce Platform',
-		description: `
-      Проект E-commerce Platform – это мощное веб-приложение, разработанное на базе React, предназначенное для создания интернет-магазинов.
-      Приложение предоставляет все необходимые инструменты для управления продуктами, заказами и клиентами.
-      Основная цель проекта – предоставить гибкую и масштабируемую платформу для торговли в интернете.
+		name: ' Fitness Landing — лендинг для фитнес-тренера',
+		description: `Современный лендинг, созданный для продвижения услуг персонального фитнес-тренера. Сайт выполнен в виде одностраничного приложения с плавными анимациями, слайдерами и полностью адаптивным интерфейсом. Проект разработан на React с использованием Tailwind CSS и Swiper, задеплоен на Netlify .
+Что реализовано:
+\t•\tАдаптивная вёрстка (мобильные, планшеты, десктоп)
+\t•\tСлайдеры с отзывами и преимуществами
+\t•\tПлавные анимации при скролле
+\t•\tСтруктурированный и чистый код
+\t•\tCI/CD-деплой на Netlify
+\t•\tSEO-основа и базовая производительность
+
+Цель проекта:
+Отработать создание современного лендинга с нуля, пройти все этапы: от дизайна и вёрстки до сборки и публикации. Этот проект показал мой подход к созданию интерфейсов и понимание полного цикла разработки и запуска.
     `,
-		src: ReactImage,
-		srcGit: 'https://github.com/',
-		images: [ReactImage1, ReactImage2],
+		src: FintessLanding,
+		srcGit: 'https://github.com/CopperyTexas/personal-trainer',
+		images: [FintessLanding1, FintessLanding2, FintessLanding3],
 	},
 	{
 		id: 4,
-		name: 'Redux Project: Expense Tracker',
+		name: 'HeroVerse — мини-социальная сеть с серверной частью',
 		description: `
-      Проект Expense Tracker – это удобное веб-приложение, разработанное на базе Redux и React, предназначенное для отслеживания расходов.
-      Приложение позволяет пользователям вести учет своих доходов и расходов, анализировать финансовое состояние и планировать бюджет.
-      Основная цель проекта – предоставить эффективный инструмент для управления личными финансами.
+     HeroVerse — учебный проект социальной сети с фронтендом на Angular и сервером на Node.js + MongoDB. В приложении реализованы: регистрация и вход по JWT, настройка профиля, список друзей, подписки, личные чаты и поиск пользователей.
+
+Технологии: Angular, NgRx, RxJS, Node.js, Express, MongoDB, JWT
+
+Что реализовано:
+\t•\tАутентификация и защита маршрутов
+\t•\tРедактирование профиля и аватара
+\t•\tПоиск и подписки
+\t•\tЛичные чаты и список друзей
+\t•\tПолноценный REST API
+
+Чему я научился:
+\t•\tОрганизовывать архитектуру клиент-серверного приложения
+\t•\tРаботать с токенами и защищать маршруты
+\t•\tИспользовать MongoDB для хранения структурированных данных
+\t•\tРазрабатывать SPA с Angular и управлением состоянием (NgRx)
     `,
-		src: ReduxImage,
-		srcGit: 'https://github.com/',
-		images: [ReduxImage1, ReduxImage2],
+		src: HeroVerse,
+		srcGit: 'https://github.com/CopperyTexas/HeroVerse',
+		images: [HeroVerse1, HeroVerse2,HeroVerse3, HeroVerse4],
 	},
 ]
 
