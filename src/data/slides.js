@@ -1,6 +1,7 @@
 // Данные для проектов
 // Импорт изображений проектов
 import LandingPages from '/public/assets/images/projects/LandingPages.png'
+import InterSeis from '/public/assets/images/projects/InterSeis.png'
 import Game2048 from '/public/assets/images/projects/Game2048.png'
 import FintessLanding from '/public/assets/images/projects/FintessLanding.png'
 import HeroVerse from '/public/assets/images/projects/HeroVerse.png'
@@ -21,6 +22,10 @@ import HeroVerse1 from '/public/assets/images/projects/HeroVerse/image1.png'
 import HeroVerse2 from '/public/assets/images/projects/HeroVerse/image2.png'
 import HeroVerse3 from '/public/assets/images/projects/HeroVerse/image3.png'
 import HeroVerse4 from '/public/assets/images/projects/HeroVerse/image4.png'
+import InterSeis1 from '/public/assets/images/projects/InterSeis/image1.png'
+import InterSeis2 from '/public/assets/images/projects/InterSeis/image2.png'
+import InterSeis3 from '/public/assets/images/projects/InterSeis/image3.png'
+import InterSeis4 from '/public/assets/images/projects/InterSeis/image4.png'
 
 
 // Массив с данными о слайдах проектов
@@ -109,6 +114,24 @@ const slides = [
 		src: HeroVerse,
 		srcGit: 'https://github.com/CopperyTexas/HeroVerse',
 		images: [HeroVerse1, HeroVerse2,HeroVerse3, HeroVerse4],
+	},
+	{
+		id: 5,
+		name: 'InterSeis — десктопное приложение для сейсморазведки',
+		description: `
+     Приложение для построения и редактирования графов обработки сейсмоданных, созданное на базе Angular и Electron. Интерфейс позволяет загружать, настраивать и сохранять цепочки фильтров в формате .ips. Разработано как внутренняя альтернатива устаревшим инженерным утилитам.
+
+Технологии: Angular, Electron, TypeScript, Tailwind CSS
+
+Что реализовано:
+\t•\tДесктопное приложение с drag-and-drop интерфейсом
+\t•\tЗагрузка и сохранение конфигураций
+\t•\tДерево папок, диалоги настроек фильтров
+\t•\tПоддержка запуска внешних программ
+    `,
+		src: InterSeis,
+		srcGit: 'https://github.com/CopperyTexas/HeroVerse',
+		images: [InterSeis1, InterSeis2, InterSeis3, InterSeis4],
 	},
 ]
 
