@@ -1,6 +1,5 @@
 // Импорт фреймворков
 import {AnimatePresence, motion} from 'framer-motion'
-import Image from 'next/image'
 import {useState} from 'react'
 
 // Импорт компонентов
@@ -86,7 +85,7 @@ const Slider = () => {
 					transition={{ duration: 0.5 }}
 				>
 					<div style={{ position: 'relative', width: '100%', height: '100%' }}>
-						<Image
+						<img
 							src={slides[currentSlide].src}
 							alt={slides[currentSlide].name}
 							fill
