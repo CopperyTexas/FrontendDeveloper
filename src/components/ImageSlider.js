@@ -1,5 +1,5 @@
 // Импорт необходимых библиотек и компонентов
-import { motion } from 'framer-motion'
+import {motion} from 'framer-motion'
 import Image from 'next/image'
 import imageVariant from '../data/imageVariants'
 
@@ -38,6 +38,7 @@ const ImageSlider = ({
 						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						style={{ objectFit: 'contain' }}
 						priority
+						unoptimized
 					/>
 				</motion.div>
 				{/* Кнопка для переключения на предыдущее изображение */}
