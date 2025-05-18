@@ -1,7 +1,7 @@
 // Импорт фреймворков
-import { AnimatePresence, motion } from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import Image from 'next/image'
-import { useEffect } from 'react'
+import {useEffect} from 'react'
 
 // Импорт компонентов
 import ImageNavigationButtons from './ImageNavigationButtons'
@@ -67,6 +67,7 @@ const Modal = ({
 								style={{ objectFit: 'contain' }}
 								sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 								priority
+								unoptimized
 							/>
 							{/* Кнопки навигации между изображениями */}
 							<ImageNavigationButtons

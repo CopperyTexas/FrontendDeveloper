@@ -1,7 +1,7 @@
 // Импорт фреймворков
-import { motion, useInView } from 'framer-motion'
+import {motion, useInView} from 'framer-motion'
 import Image from 'next/image'
-import { useRef } from 'react'
+import {useRef} from 'react'
 
 // Импорт компонентов
 import AnimatedText from './AnimatedText'
@@ -76,6 +76,7 @@ const SkillsSection = ({ skills, openModal, selectedSkill, closeModal }) => {
 									fill
 									sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 									style={{ objectFit: 'contain' }}
+									unoptimized
 								/>
 							</div>
 							<h2 className='text-lg font-medium dark:text-light 2xl:text-sm xl:text-xs'>
