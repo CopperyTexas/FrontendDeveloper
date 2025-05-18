@@ -2,7 +2,6 @@
 import {motion} from 'framer-motion'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import Image from 'next/image'
 import {useState} from 'react'
 
 // Импорт компонентов
@@ -84,15 +83,15 @@ const About = () => {
 								animate='animate'
 								variants={imageVariant}
 							>
-								<Image
+								<img
 									src={profilePic}
 									alt='GlebovDenis'
 									className='w-full h-auto rounded-2xl'
-									priority
+
 									sizes='(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw'
-									unoptimized
+								
 								/>
 							</motion.div>
 						</div>

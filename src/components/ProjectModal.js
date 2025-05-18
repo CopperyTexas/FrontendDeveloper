@@ -1,6 +1,5 @@
 // Импорт фреймворков
 import {AnimatePresence, motion} from 'framer-motion'
-import Image from 'next/image'
 import {useEffect} from 'react'
 
 // Импорт компонентов
@@ -60,7 +59,7 @@ const Modal = ({
 						</div>
 						{/* Изображение в модальном окне */}
 						<div className='relative w-full h-full'>
-							<Image
+							<img
 								src={images[currentImage]}
 								alt={`${slideName} image ${currentImage + 1}`}
 								fill

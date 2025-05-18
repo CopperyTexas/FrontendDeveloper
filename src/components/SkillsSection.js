@@ -1,6 +1,5 @@
 // Импорт фреймворков
 import {motion, useInView} from 'framer-motion'
-import Image from 'next/image'
 import {useRef} from 'react'
 
 // Импорт компонентов
@@ -70,13 +69,13 @@ const SkillsSection = ({ skills, openModal, selectedSkill, closeModal }) => {
 							onClick={() => openModal(skill)}
 						>
 							<div className='relative w-16 h-16 mb-2 xl:w-8 xl:h-8'>
-								<Image
+								<img
 									src={skill.logo}
 									alt={skill.name}
-									fill
+
 									sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 									style={{ objectFit: 'contain' }}
-									unoptimized
+									
 								/>
 							</div>
 							<h2 className='text-lg font-medium dark:text-light 2xl:text-sm xl:text-xs'>
