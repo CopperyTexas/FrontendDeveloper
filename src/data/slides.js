@@ -1,32 +1,4 @@
 // Данные для проектов
-// Импорт изображений проектов
-import LandingPages from '/public/assets/images/projects/LandingPages.png'
-import InterSeis from '/public/assets/images/projects/InterSeis.png'
-import Game2048 from '/public/assets/images/projects/Game2048.png'
-import FintessLanding from '/public/assets/images/projects/FintessLanding.png'
-import HeroVerse from '/public/assets/images/projects/HeroVerse.png'
-import LandingPage1 from '/public/assets/images/projects/LandingPages/image1.png'
-import LandingPage2 from '/public/assets/images/projects/LandingPages/image2.png'
-import LandingPage3 from '/public/assets/images/projects/LandingPages/image3.png'
-import LandingPage4 from '/public/assets/images/projects/LandingPages/image4.png'
-import LandingPage5 from '/public/assets/images/projects/LandingPages/image5.png'
-import LandingPage6 from '/public/assets/images/projects/LandingPages/image6.png'
-import LandingPage7 from '/public/assets/images/projects/LandingPages/image7.jpeg'
-import LandingPage8 from '/public/assets/images/projects/LandingPages/image8.jpeg'
-import Game1 from '/public/assets/images/projects/Game2048/image1.png'
-import Game2 from '/public/assets/images/projects/Game2048/image2.png'
-import FintessLanding1 from '/public/assets/images/projects/FitnessLanding/image1.png'
-import FintessLanding2 from '/public/assets/images/projects/FitnessLanding/image2.png'
-import FintessLanding3 from '/public/assets/images/projects/FitnessLanding/image3.png'
-import HeroVerse1 from '/public/assets/images/projects/HeroVerse/image1.png'
-import HeroVerse2 from '/public/assets/images/projects/HeroVerse/image2.png'
-import HeroVerse3 from '/public/assets/images/projects/HeroVerse/image3.png'
-import HeroVerse4 from '/public/assets/images/projects/HeroVerse/image4.png'
-import InterSeis1 from '/public/assets/images/projects/InterSeis/image1.png'
-import InterSeis2 from '/public/assets/images/projects/InterSeis/image2.png'
-import InterSeis3 from '/public/assets/images/projects/InterSeis/image3.png'
-import InterSeis4 from '/public/assets/images/projects/InterSeis/image4.png'
-
 
 // Массив с данными о слайдах проектов
 const slides = [
@@ -44,9 +16,18 @@ const slides = [
 Цель:
 Повысить уровень владения вёрсткой, потренироваться в создании интерфейсов «с нуля» и соблюдении pixel-perfect.
     `,
-		src: LandingPages,
+		src: '/assets/images/projects/LandingPages.png',
 		srcGit: 'https://github.com/CopperyTexas/Book-shop',
-		images: [LandingPage1, LandingPage2, LandingPage3,LandingPage4,LandingPage5,LandingPage6,LandingPage7,LandingPage8],
+		images: [
+			'/assets/images/projects/LandingPages/image1.png',
+			'/assets/images/projects/LandingPages/image2.png',
+			'/assets/images/projects/LandingPages/image3.png',
+			'/assets/images/projects/LandingPages/image4.png',
+			'/assets/images/projects/LandingPages/image5.png',
+			'/assets/images/projects/LandingPages/image6.png',
+			'/assets/images/projects/LandingPages/image7.jpeg',
+			'/assets/images/projects/LandingPages/image8.jpeg'
+		],
 	},
 	{
 		id: 2,
@@ -65,10 +46,11 @@ const slides = [
 Цель:
 Развить навыки работы с DOM, логикой игры и пользовательским интерфейсом. Этот проект стал отличной практикой в реализации взаимодействия компонентов, хранения данных и создания UI с нуля.
     `,
-		src: Game2048,
+		src: '/assets/images/projects/Game2048.png',
 		srcGit: 'https://github.com/CopperyTexas/2048',
 		images: [
-	Game1, Game2
+			'/assets/images/projects/Game2048/image1.png',
+			'/assets/images/projects/Game2048/image2.png'
 		],
 	},
 	{
@@ -86,9 +68,13 @@ const slides = [
 Цель проекта:
 Отработать создание современного лендинга с нуля, пройти все этапы: от дизайна и вёрстки до сборки и публикации. Этот проект показал мой подход к созданию интерфейсов и понимание полного цикла разработки и запуска.
     `,
-		src: FintessLanding,
+		src: '/assets/images/projects/FintessLanding.png',
 		srcGit: 'https://github.com/CopperyTexas/personal-trainer',
-		images: [FintessLanding1, FintessLanding2, FintessLanding3],
+		images: [
+			'/assets/images/projects/FitnessLanding/image1.png',
+			'/assets/images/projects/FitnessLanding/image2.png',
+			'/assets/images/projects/FitnessLanding/image3.png'
+		],
 	},
 	{
 		id: 4,
@@ -111,9 +97,14 @@ const slides = [
 \t•\tИспользовать MongoDB для хранения структурированных данных
 \t•\tРазрабатывать SPA с Angular и управлением состоянием (NgRx)
     `,
-		src: HeroVerse,
+		src: '/assets/images/projects/HeroVerse.png',
 		srcGit: 'https://github.com/CopperyTexas/HeroVerse',
-		images: [HeroVerse1, HeroVerse2,HeroVerse3, HeroVerse4],
+		images: [
+			'/assets/images/projects/HeroVerse/image1.png',
+			'/assets/images/projects/HeroVerse/image2.png',
+			'/assets/images/projects/HeroVerse/image3.png',
+			'/assets/images/projects/HeroVerse/image4.png'
+		],
 	},
 	{
 		id: 5,
@@ -129,9 +120,14 @@ const slides = [
 \t•\tДерево папок, диалоги настроек фильтров
 \t•\tПоддержка запуска внешних программ
     `,
-		src: InterSeis,
+		src: '/assets/images/projects/InterSeis.png',
 		srcGit: 'https://github.com/CopperyTexas/HeroVerse',
-		images: [InterSeis1, InterSeis2, InterSeis3, InterSeis4],
+		images: [
+			'/assets/images/projects/InterSeis/image1.png',
+			'/assets/images/projects/InterSeis/image2.png',
+			'/assets/images/projects/InterSeis/image3.png',
+			'/assets/images/projects/InterSeis/image4.png'
+		],
 	},
 ]
 
