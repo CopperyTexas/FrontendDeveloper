@@ -18,7 +18,6 @@ import aboutData from '../data/aboutData'
 // Импорт данных и изображений
 import imageVariant from '../data/imageVariants'
 import skills from '../data/skills'
-import profilePic from '/public/assets/images/photo_me.jpg'
 
 // Динамический импорт компонента SkillModal
 const SkillModal = dynamic(() => import('../components/SkillModal'), {
@@ -84,14 +83,14 @@ const About = () => {
 								variants={imageVariant}
 							>
 								<img
-									src={profilePic}
+									src='/public/assets/images/photo_me.jpg'
 									alt='GlebovDenis'
 									className='w-full h-auto rounded-2xl'
 
 									sizes='(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw'
-								
+
 								/>
 							</motion.div>
 						</div>
