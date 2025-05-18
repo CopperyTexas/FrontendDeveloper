@@ -1,15 +1,15 @@
 // Импорт фреймворков
-import { motion } from 'framer-motion'
+import {motion} from 'framer-motion'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react'
+import {useState} from 'react'
 
 // Импорт компонентов
 import AchievementHeading from '../components/AchievementHeading'
 import AnimatedNumbers from '../components/AnimatedNumbers'
 import AnimatedText from '../components/AnimatedText'
-import { AchievementColor, AchievementMono } from '../components/icons'
+import {AchievementColor, AchievementMono} from '../components/icons'
 import Layout from '../components/Layout'
 import Paragraph from '../components/Paragraph'
 import SkillsSection from '../components/SkillsSection'
@@ -73,7 +73,7 @@ const About = () => {
 							<Paragraph title='Опыт и навыки' text={aboutData.experience} />
 							<Paragraph title='Мой подход' text={aboutData.approach} />
 							<Paragraph title='Цели' text={aboutData.goals} />
-							<Paragraph title='Немного о себе' text={aboutData.aboutMe} />
+							<Paragraph title='Немного о себе вне кода' text={aboutData.aboutMe} />
 						</div>
 
 						<div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 md:p-4 xl:p-6 mt-4 dark:bg-dark dark:border-primaryDark  xl:col-span-4 lg:col-span-5 2xl:col-span-4'>

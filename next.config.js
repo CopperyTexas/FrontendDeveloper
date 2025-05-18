@@ -2,6 +2,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 const nextConfig = {
+	output: 'export',
 	webpack(config, { isServer }) {
 		config.module.rules.push({
 			test: /\.svg$/,

@@ -1,5 +1,5 @@
 // Импорт фреймворков
-import { motion } from 'framer-motion'
+import {motion} from 'framer-motion'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -9,7 +9,7 @@ import AnimatedText from '../components/AnimatedText'
 import CodeAnimation from '../components/CodeAnimation'
 import Layout from '../components/Layout'
 import TransitionEffect from '../components/TransitionEffect'
-import { LinkArrow } from '../components/icons'
+import {LinkArrow} from '../components/icons'
 
 // Импорт данных и изображений
 import codeStrings from '../data/codeStrings'
@@ -49,19 +49,18 @@ export default function Home() {
 								className='!text-7xl !text-left xl:!text-5xl lg:!text-7xl md:!text-5xl sm:!text-3xl'
 							/>
 							<p className='my-5 text-xl font-medium 2xl:text-sm xl:text-base'>
-								Меня зовут Денис, и я - начинающий фронтенд разработчик, имею
-								опыт работы с такими современными технологиями, как React и
-								Angular. Несмотря на то, что у меня нет коммерческого опыта, я
-								уже успел создать несколько интересных проектов, которые
-								отражают мои навыки и стремление к совершенству. Пожалуйста,
-								ознакомьтесь с моими работами, чтобы увидеть, как я воплощаю
-								свои идеи в жизнь. Я открыт для новых возможностей и готов
-								принять участие в интересных проектах.
+								Привет! Меня зовут Денис, я фронтенд-разработчик.
+								Создаю современные интерфейсы с акцентом на удобство и чистую структуру кода.
+								Работаю с Angular, React, Tailwind CSS и постоянно учусь новому.
+								В разработке для меня важны детали, понятный код и стабильная работа.
+								Я не просто учу технологии — я применяю их на практике и довожу проекты до результата.
+
+								Посмотри мои проекты — они лучше любых слов покажут, как я работаю.
 							</p>
 							<div className='flex items-center self-start mt-2 lg:self-center'>
 								{/* Ссылка на резюме */}
 								<Link
-									href='/resume.pdf'
+									href='/ResumeGlebov.pdf'
 									target='_blank'
 									className='flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-primaryDark hover:text-dark border-2 border-solid border-transparent hover:border-dark transition-colors duration-300 ease-in-out dark:border-light dark:hover:border-dark'
 									download={true}

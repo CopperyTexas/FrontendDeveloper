@@ -1,6 +1,6 @@
 // Импорт фреймворков и библиотек
-import { motion } from 'framer-motion'
-import { useState } from 'react'
+import {motion} from 'framer-motion'
+import {useState} from 'react'
 
 // Импорт компонентов
 import CustomLink from '../components/CustomLink'
@@ -9,14 +9,7 @@ import Logo from './Logo'
 import useThemeSwitcher from './hooks/useThemeSwitcher'
 
 // Импорт иконок
-import {
-	GithubIcon,
-	LinkedInIcon,
-	MoonIcon,
-	SunIcon,
-	TGIcon,
-	VkontakteIcon,
-} from './icons'
+import {GithubIcon, MoonIcon, SunIcon, TGIcon, VkontakteIcon,} from './icons'
 
 /**
  * Компонент NavBar
@@ -108,16 +101,7 @@ const NavBar = () => {
 							<GithubIcon />
 						</motion.a>
 						<motion.a
-							href='https://careers.linkedin.cn/'
-							target={'_blank'}
-							whileHover={{ y: -2 }}
-							whileTap={{ scale: 0.9 }}
-							className='w-6 mx-3 sm:mx-1'
-						>
-							<LinkedInIcon />
-						</motion.a>
-						<motion.a
-							href='https://vk.com'
+							href='https://vk.com/denisglebovvk'
 							target={'_blank'}
 							whileHover={{ y: -2 }}
 							whileTap={{ scale: 0.9 }}
@@ -126,7 +110,7 @@ const NavBar = () => {
 							<VkontakteIcon />
 						</motion.a>
 						<motion.a
-							href='https://telegram.org/'
+							href='https://t.me/@Glebov_denis'
 							target={'_blank'}
 							whileHover={{ y: -2 }}
 							whileTap={{ scale: 0.9 }}
@@ -169,17 +153,9 @@ const NavBar = () => {
 				>
 					<GithubIcon />
 				</motion.a>
+
 				<motion.a
-					href='https://careers.linkedin.cn/'
-					target={'_blank'}
-					whileHover={{ y: -2 }}
-					whileTap={{ scale: 0.9 }}
-					className='w-6 mx-3'
-				>
-					<LinkedInIcon />
-				</motion.a>
-				<motion.a
-					href='https://vk.com'
+					href='https://vk.com/denisglebovvk'
 					target={'_blank'}
 					whileHover={{ y: -2 }}
 					whileTap={{ scale: 0.9 }}
@@ -188,7 +164,7 @@ const NavBar = () => {
 					<VkontakteIcon />
 				</motion.a>
 				<motion.a
-					href='https://telegram.org/'
+					href='https://t.me/Glebov_denis'
 					target={'_blank'}
 					whileHover={{ y: -2 }}
 					whileTap={{ scale: 0.9 }}

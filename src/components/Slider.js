@@ -1,7 +1,7 @@
 // Импорт фреймворков
-import { AnimatePresence, motion } from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import Image from 'next/image'
-import { useState } from 'react'
+import {useState} from 'react'
 
 // Импорт компонентов
 import Modal from '../components/ProjectModal'
@@ -90,6 +90,7 @@ const Slider = () => {
 							src={slides[currentSlide].src}
 							alt={slides[currentSlide].name}
 							fill
+							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 							style={{ objectFit: 'cover' }}
 							priority
 						/>
