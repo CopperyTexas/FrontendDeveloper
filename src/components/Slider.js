@@ -3,6 +3,7 @@ import {AnimatePresence, motion} from 'framer-motion'
 import {useState} from 'react'
 
 // Импорт компонентов
+import Image from "next/image";
 import Modal from '../components/ProjectModal'
 import ImageSlider from './ImageSlider'
 import ProjectInfo from './ProjectInfo'
@@ -85,11 +86,13 @@ const Slider = () => {
 					transition={{ duration: 0.5 }}
 				>
 					<div style={{ position: 'relative', width: '100%', height: '100%' }}>
-						<img
+						<Image
 							src={slides[currentSlide].src}
 							alt={slides[currentSlide].name}
 							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-							style={{ objectFit: 'cover' }}
+							priority={currentSlide === 0}
+							className="object-cover"
+							placeholder="blur"
 						/>
 					</div>
 				</motion.div>

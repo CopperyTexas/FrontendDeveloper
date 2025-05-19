@@ -1,117 +1,135 @@
 
-// Массив с данными о навыках
+
+// Импорт логотипов навыков
+import HTMLLogo      from './logos/html.png'
+import CSSLogo       from './logos/css.png'
+import SASSLogo      from './logos/sass.png'
+import TailwindLogo  from './logos/tailwind.png'
+import JSLogo        from './logos/javascript.png'
+import TSTypeLogo    from './logos/typescript.png'
+import BootstrapLogo from './logos/bootstrap.png'
+import ReactLogo     from './logos/react.png'
+import NextLogo      from './logos/nextjs.png'
+import AngularLogo   from './logos/angular.png'
+import GitLogo       from './logos/git.png'
+import ReduxLogo     from './logos/redux.png'
+import ApiLogo       from './logos/restapi.png'
+import GraphQLLogo   from './logos/graphql.png'
+import WebpackLogo   from './logos/webpack.png'
+import JestLogo      from './logos/jest.png'
+
 const skills = [
 	{
 		id: 1,
 		name: 'HTML',
 		description:
-			'HTML (HyperText Markup Language) - это основной язык разметки для создания и структурирования контента веб-страниц.',
-		logo: '/assets/images/skills/html.png',
+			'HTML (HyperText Markup Language) — основной язык разметки для создания и структурирования содержимого веб-страниц.',
+		logo: HTMLLogo,
 	},
 	{
 		id: 2,
 		name: 'CSS',
 		description:
-			'CSS (Cascading Style Sheets) - это язык стилей, используемый для оформления и визуального представления веб-страниц, включая цвета, шрифты и макеты.',
-		logo: '/assets/images/skills/css.png',
+			'CSS (Cascading Style Sheets) — язык стилей для оформления веб-страниц: цвета, шрифты, макеты и адаптивность.',
+		logo: CSSLogo,
 	},
 	{
 		id: 3,
 		name: 'SASS',
 		description:
-			'SASS (Syntactically Awesome Stylesheets) - это расширение CSS, которое позволяет использовать переменные, вложенность и миксины для более эффективного и удобного написания стилей.',
-		logo: '/assets/images/skills/sass.png',
+			'SASS (Syntactically Awesome Stylesheets) — расширение CSS с переменными, вложенностью и миксинами для более удобной разработки стилей.',
+		logo: SASSLogo,
 	},
 	{
 		id: 4,
-		name: 'Tailwind',
+		name: 'Tailwind CSS',
 		description:
-			'Tailwind CSS - это утилитарный CSS-фреймворк, который предоставляет готовые классы для быстрого и гибкого создания адаптивного дизайна без необходимости писать пользовательские стили.',
-		logo: '/assets/images/skills/tailwind.png',
+			'Tailwind CSS — утилитарный CSS-фреймворк для быстрой и гибкой вёрстки без написания пользовательских стилей.',
+		logo: TailwindLogo,
 	},
 	{
 		id: 5,
 		name: 'JavaScript',
 		description:
-			'JavaScript - это язык программирования, используемый для создания интерактивных и динамических элементов на веб-страницах.',
-		logo: '/assets/images/skills/javascript.png',
+			'JavaScript — язык программирования для создания интерактивных и динамических элементов на веб-страницах.',
+		logo: JSLogo,
 	},
 	{
 		id: 6,
 		name: 'TypeScript',
 		description:
-			'TypeScript - это надстройка над JavaScript, добавляющая статическую типизацию и другие возможности, которые помогают разработчикам писать более надежный и масштабируемый код.',
-		logo: '/assets/images/skills/typescript.png',
+			'TypeScript — надстройка над JavaScript с поддержкой статической типизации и современными возможностями языка.',
+		logo: TSTypeLogo,
 	},
 	{
 		id: 7,
 		name: 'Bootstrap',
 		description:
-			'Bootstrap - это популярный CSS-фреймворк, который предоставляет готовые компоненты и стили для создания адаптивных и современных веб-сайтов.',
-		logo: '/assets/images/skills/bootstrap.png',
+			'Bootstrap — популярный CSS-фреймворк с готовыми компонентами и сеткой для адаптивных веб-сайтов.',
+		logo: BootstrapLogo,
 	},
 	{
 		id: 8,
 		name: 'React',
 		description:
-			'React - это библиотека JavaScript для создания пользовательских интерфейсов, которая позволяет разработчикам строить компоненты и эффективно управлять состоянием приложения.',
-		logo: '/assets/images/skills/react.png',
+			'React — библиотека для создания пользовательских интерфейсов на основе компонентов и эффективного управления состоянием.',
+		logo: ReactLogo,
 	},
 	{
 		id: 9,
 		name: 'Next.js',
 		description:
-			'Next.js - это фреймворк для React, который позволяет создавать серверные рендеринг и статические веб-приложения с улучшенной производительностью и SEO.',
-		logo: '/assets/images/skills/nextjs.png',
+			'Next.js — фреймворк поверх React для SSR, SSG и оптимизации веб-приложений с улучшенной производительностью и SEO.',
+		logo: NextLogo,
 	},
 	{
 		id: 10,
 		name: 'Angular',
 		description:
-			'Angular - это платформенный фреймворк для разработки веб-приложений, который предоставляет инструменты для создания масштабируемых и поддерживаемых приложений.',
-		logo: '/assets/images/skills/angular.png',
+			'Angular — платформенный фреймворк для создания масштабируемых веб-приложений с TypeScript и готовыми инструментами.',
+		logo: AngularLogo,
 	},
 	{
 		id: 11,
 		name: 'Git',
 		description:
-			'Git - это система контроля версий, которая позволяет разработчикам отслеживать изменения в коде, сотрудничать и управлять версиями проектов.',
-		logo: '/assets/images/skills/git.png',
+			'Git — система контроля версий для отслеживания изменений, совместной работы и управления релизами проектов.',
+		logo: GitLogo,
 	},
 	{
 		id: 12,
 		name: 'Redux',
 		description:
-			'Redux - это библиотека для управления состоянием в JavaScript-приложениях, которая помогает предсказуемо обновлять состояние и упрощает отладку.',
-		logo: '/assets/images/skills/redux.png',
+			'Redux — библиотека управления состоянием в JavaScript-приложениях с единой глобальной хранилищем и предсказуемыми обновлениями.',
+		logo: ReduxLogo,
 	},
 	{
 		id: 13,
-		name: 'API',
+		name: 'REST API',
 		description:
-			'RESTful API - это архитектурный стиль для создания веб-сервисов, который использует HTTP методы для взаимодействия с ресурсами и обмена данными между клиентом и сервером.',
-		logo: '/assets/images/skills/restapi.png',
+			'REST API — архитектурный стиль веб-сервисов, использующий HTTP-методы для взаимодействия между клиентом и сервером.',
+		logo: ApiLogo,
 	},
 	{
 		id: 14,
 		name: 'GraphQL',
 		description:
-			'GraphQL - это язык запросов для API, который позволяет клиентам запрашивать только те данные, которые им нужны, улучшая эффективность и гибкость взаимодействия с сервером.',
-		logo: '/assets/images/skills/graphql.png',
+			'GraphQL — язык запросов к API, позволяющий клиентам запрашивать только необходимые данные и оптимизировать производительность.',
+		logo: GraphQLLogo,
 	},
 	{
 		id: 15,
 		name: 'Webpack',
 		description:
-			'Webpack - это модульный бандлер для JavaScript-приложений, который собирает все зависимости в единый файл для более эффективного управления и загрузки ресурсов.',
-		logo: '/assets/images/skills/webpack.png',
+			'Webpack — модульный бандлер для объединения JavaScript, CSS и прочих ресурсов в оптимальные пакеты для веб-приложений.',
+		logo: WebpackLogo,
 	},
 	{
 		id: 16,
 		name: 'Jest',
 		description:
-			'Jest - это фреймворк для тестирования JavaScript, который позволяет легко создавать и запускать тесты, обеспечивая высокое покрытие кода и надежность приложений.',
-		logo: '/assets/images/skills/jest.png',
+			'Jest — фреймворк для тестирования JavaScript-приложений с поддержкой снапшотов и высоких показателей покрытия кода.',
+		logo: JestLogo,
 	},
 ]
 

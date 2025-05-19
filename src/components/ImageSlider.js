@@ -1,6 +1,7 @@
 // Импорт необходимых библиотек и компонентов
 import {motion} from 'framer-motion'
 import imageVariant from '../data/imageVariants'
+import Image from "next/image";
 
 /**
  * Компонент ImageSlider
@@ -30,12 +31,14 @@ const ImageSlider = ({
 					variants={imageVariant}
 					transition={{ duration: 0.5 }}
 				>
-					<img
+					<Image
 						src={images[currentImage]}
 						alt={`${slideName} image ${currentImage + 1}`} // Используем slideName для alt текста
 						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						style={{ objectFit: 'contain' }}
-
+						priority
+						unoptimized
+						fill
 
 					/>
 				</motion.div>

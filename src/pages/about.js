@@ -3,6 +3,7 @@ import {motion} from 'framer-motion'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import {useState} from 'react'
+import PhotoMe from '/public/assets/images/photo_me.jpg'
 
 // Импорт компонентов
 import AchievementHeading from '../components/AchievementHeading'
@@ -18,6 +19,7 @@ import aboutData from '../data/aboutData'
 // Импорт данных и изображений
 import imageVariant from '../data/imageVariants'
 import skills from '../data/skills'
+import Image from "next/image";
 
 // Динамический импорт компонента SkillModal
 const SkillModal = dynamic(() => import('../components/SkillModal'), {
@@ -82,10 +84,12 @@ const About = () => {
 								animate='animate'
 								variants={imageVariant}
 							>
-								<img
-									src='/public/assets/images/photo_me.jpg'
+								<Image
+									src={PhotoMe}
 									alt='GlebovDenis'
 									className='w-full h-auto rounded-2xl'
+									width={400}                          // задайте реальные размеры или близкие
+									height={400}
 
 									sizes='(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
