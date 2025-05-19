@@ -30,6 +30,7 @@
 		"typewriter-effect": "^2.21.0"
 	},
 	"devDependencies": {
+		"@netlify/plugin-nextjs": "^5.11.1",
 		"@svgr/webpack": "^8.1.0",
 		"cross-env": "^7.0.3",
 		"css-minimizer-webpack-plugin": "^7.0.0",
